@@ -1,8 +1,12 @@
+import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { Image, Title, Group, ActionIcon } from '@mantine/core'
+//import { HeaderSimple } from './headerComponent'
+import { HeaderMiddle } from './header3Component'
+import Links from './api/links.json'
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -12,13 +16,12 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <HeaderMiddle links={Links.Links}></HeaderMiddle>
+      <Title order={2}>We are damn cool company!</Title>
 
         <p className={styles.description}>
           Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          <code className={styles.code}>pages/index.tsx</code>
         </p>
 
         <div className={styles.grid}>
@@ -50,6 +53,7 @@ export default function Home() {
             </p>
           </a>
         </div>
+        
       </main>
 
       <footer className={styles.footer}>
@@ -67,3 +71,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home
