@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import { Image, Title, Group, ActionIcon } from '@mantine/core'
+import styles from '../assets/styles/Home.module.css'
+import { Image, Title, Group, ActionIcon, Button, MantineProvider , Text} from '@mantine/core'
 //import { HeaderSimple } from './headerComponent'
 import { HeaderMiddle } from './header3Component'
 import Links from './api/links.json'
@@ -16,9 +16,13 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-      <HeaderMiddle links={Links.Links}></HeaderMiddle>
-      <Title order={2}>We are damn cool company!</Title>
-
+        <HeaderMiddle links={Links.Links}></HeaderMiddle>
+        <Title order={2}>We are damn cool company!</Title>
+        <MantineProvider styles={{ Text: { root: { fontFamily: 'WhichWay, sans-serif' } } }}>
+      <Text>20px text</Text>
+    </MantineProvider>
+        
+        <Button variant="gradient" gradient={{ from: 'yellow', to: 'yellow' }} onClick={() => redirectToLink('https://mantine.dev/')}>Check out Mantine</Button>
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
@@ -53,7 +57,7 @@ const Home: NextPage = () => {
             </p>
           </a>
         </div>
-        
+
       </main>
 
       <footer className={styles.footer}>
@@ -73,3 +77,8 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+
+const redirectToLink = (link: string): void => {
+  window.open(link, '_blank');
+};

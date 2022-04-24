@@ -9,6 +9,8 @@ const useStyles = createStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: 56,
+    paddingLeft: '0!important',
+    paddingRight: '0!important',
 
     [theme.fn.smallerThan('sm')]: {
       justifyContent: 'flex-start',
@@ -17,6 +19,8 @@ const useStyles = createStyles((theme) => ({
 
   links: {
     width: 260,
+    minWidth: 435,
+    fontFamily: 'WhichWay',
 
     [theme.fn.smallerThan('sm')]: {
       display: 'none',
@@ -25,6 +29,7 @@ const useStyles = createStyles((theme) => ({
 
   social: {
     width: 260,
+    minWidth: 435,
 
     [theme.fn.smallerThan('sm')]: {
       width: 'auto',
@@ -59,9 +64,9 @@ const useStyles = createStyles((theme) => ({
     '&, &:hover': {
       backgroundColor:
         theme.colorScheme === 'dark'
-          ? theme.fn.rgba(theme.colors[theme.primaryColor][9], 0.25)
-          : theme.colors[theme.primaryColor][0],
-      color: theme.colors[theme.primaryColor][theme.colorScheme === 'dark' ? 3 : 7],
+          ? theme.fn.rgba(theme.colors[theme.primaryColor][1], 1)
+          : theme.colors[theme.primaryColor][4],
+      color: theme.colors.white[9],
     },
   },
 }));
