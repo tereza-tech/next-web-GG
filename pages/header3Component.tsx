@@ -9,6 +9,7 @@ const useStyles = createStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: 56,
+    width: '100%',
     paddingLeft: '0!important',
     paddingRight: '0!important',
 
@@ -95,7 +96,7 @@ export function HeaderMiddle({ links }: HeaderMiddleProps) {
   ));
 
   return (
-    <Header height={56} mb={120}>
+    <Header height="calc(60px + 6vw)" width="100%" mb={20}>
       <Container className={classes.inner}>
 
       <Logo />
