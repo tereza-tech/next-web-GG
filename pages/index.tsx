@@ -7,9 +7,12 @@ import { HeaderMiddle } from './header3Component'
 import { ArticleCard } from './cardComponent'
 import { HeroBullets } from './heroBulletsComponent'
 import { YellowBullets } from './yellowBulletsComponent'
-import { GetInTouch } from './getInTouchComponent'
+import { CardInTouch } from './cardInTouchComponent'
+import { TwoFlexContact } from './twoFlexContactComponent'
+import { ThreeTiles } from './threeTilesComponent'
 import { RowButtons } from './rowButtons'
 import Links from './api/links.json'
+import Categories from './api/tiles.json'
 
 const Home: NextPage = () => {
   return (
@@ -33,6 +36,7 @@ const Home: NextPage = () => {
         <Title order={2}>We are damn cool company!</Title>
         <HeroBullets></HeroBullets>
         <YellowBullets></YellowBullets>
+        <ThreeTiles className={styles.hidden} categories={Categories.Categories}></ThreeTiles><Image className={styles.sofa} src="/comics_sofa.png"></Image>
         <MantineProvider styles={{ Text: { root: { fontFamily: 'WhichWay, sans-serif' } } }}>
       <Text>20px text</Text>
     </MantineProvider>
@@ -40,8 +44,8 @@ const Home: NextPage = () => {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
         </p>
-
         <div className={styles.grid}>
+          
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
@@ -70,10 +74,11 @@ const Home: NextPage = () => {
             </p>
           </a>
         </div>
-<GetInTouch></GetInTouch>
+        <TwoFlexContact></TwoFlexContact>
+<CardInTouch></CardInTouch>
       </main>
-
       <footer className={styles.footer}>
+        <Image src="/comics_skate.png" className={styles.skate}></Image>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"

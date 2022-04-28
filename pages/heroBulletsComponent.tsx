@@ -55,27 +55,35 @@ const useStyles = createStyles((theme) => ({
     position: 'relative',
   },
   image: {
-
+    width: '75%',
+    float: 'right',
     [theme.fn.smallerThan('md')]: {
       display: 'none',
     },
   },
   image2: {
-    width: 300,
+    width: 280,
     height: 'auto',
     position: 'absolute',
-    bottom: -50,
-    right: -230,
+    bottom: -10,
+    right: -10,
     [theme.fn.smallerThan('md')]: {
       display: 'none',
     },
+    reveal: {
+      position: 'relative',
+      transform: 'translateY(150px)',
+      opacity: 0,
+      transition: '1s all ease',
+    },
+
   },
 
   highlight: {
     position: 'relative',
     backgroundColor:
       theme.colorScheme === 'dark'
-        ? theme.fn.rgba(theme.colors[theme.primaryColor][6], 0.55)
+        ? theme.fn.rgba(theme.colors[theme.primaryColor][3], 1)
         : theme.colors[theme.primaryColor][0],
     borderRadius: theme.radius.sm,
     padding: '4px 12px',
@@ -132,7 +140,7 @@ export function HeroBullets() {
           </div>
           <div className={classes.twoImages}>
           <Image src={image.src} className={classes.image} />
-            <Image src={image2.src} className={classes.image2}/>
+            <Image id="mover" src={image2.src} className={classes.image2}/>
         </div>
         </div>
       </Container>

@@ -21,14 +21,13 @@ const useStyles = createStyles((theme) => ({
   inner: {
     display: 'flex',
     justifyContent: 'space-between',
-    paddingTop: theme.spacing.md * 2,
-    paddingBottom: theme.spacing.xl * 2,
   },
 
   content: {
     maxWidth: 480,
     marginRight: theme.spacing.xl * 3,
-
+    paddingTop: theme.spacing.md * 2,
+    paddingBottom: theme.spacing.sm,
     [theme.fn.smallerThan('md')]: {
       maxWidth: '100%',
       marginRight: 0,
@@ -38,7 +37,7 @@ const useStyles = createStyles((theme) => ({
   title: {
     color: theme.colorScheme === 'dark' ? theme.white : theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontSize: 44,
+    fontSize: 30,
     lineHeight: 1.2,
     fontWeight: 900,
 
@@ -87,29 +86,7 @@ export function YellowBullets() {
               more than 120 customizable components and hooks to cover you in any situation
             </Text>
 
-            <List
-              mt={30}
-              spacing="sm"
-              size="sm"
-              icon={
-                <ThemeIcon size={20} radius="xl">
-                  <Check size={12} />
-                </ThemeIcon>
-              }
-            >
-              <List.Item>
-                <b>TypeScript based</b> – build type safe applications, all components and hooks
-                export types
-              </List.Item>
-              <List.Item>
-                <b>Free and open source</b> – all packages have MIT license, you can use Mantine in
-                any project
-              </List.Item>
-              <List.Item>
-                <b>No annoying focus ring</b> – focus ring will appear only when user navigates with
-                keyboard
-              </List.Item>
-            </List>
+          
 
             <Group mt={30}>
               <Button radius="xl" size="md" className={classes.control}>

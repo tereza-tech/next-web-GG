@@ -9,8 +9,6 @@ import {
   SimpleGrid,
   createStyles,
 } from '@mantine/core';
-import { ContactIconsList } from './ContactIcons/ContactIcons';
-import bg from './bg.svg';
 
 const useStyles = createStyles((theme) => {
   const BREAKPOINT = theme.fn.smallerThan('sm');
@@ -36,6 +34,9 @@ const useStyles = createStyles((theme) => {
       padding: theme.spacing.xl,
       paddingLeft: theme.spacing.xl * 2,
       borderLeft: 0,
+      paddingRight: 'auto',
+      paddingLeft: 'auto',
+      flex: 1,
 
       [BREAKPOINT]: {
         padding: theme.spacing.md,
@@ -72,12 +73,10 @@ const useStyles = createStyles((theme) => {
       boxSizing: 'border-box',
       position: 'relative',
       borderRadius: theme.radius.lg - 2,
-      backgroundImage: `url(${bg.src})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
       border: '1px solid transparent',
       padding: theme.spacing.xl,
-      flex: '0 0 280px',
+      padding: '42px',
+      flex: 1,
 
       [BREAKPOINT]: {
         marginBottom: theme.spacing.sm,
@@ -95,6 +94,7 @@ const useStyles = createStyles((theme) => {
     },
 
     control: {
+      backgroundColor: 'yellow',
       [BREAKPOINT]: {
         flex: 1,
       },
@@ -102,39 +102,31 @@ const useStyles = createStyles((theme) => {
   };
 });
 
-export function GetInTouch() {
+export function CardInTouch() {
   const { classes } = useStyles();
 
   return (
     <Paper shadow="md" radius="lg">
       <div className={classes.wrapper}>
         <div className={classes.contacts}>
-          <Text size="lg" weight={700} className={classes.title} sx={{ color: '#fff' }}>
-            Contact information
+          <Text weight={700} className={classes.title} sx={{ color: '#fff', fontSize: '30px' }}>
+            Don't have time? <br></br>We'll call you back!
           </Text>
 
-          <ContactIconsList variant="white" />
         </div>
 
         <form className={classes.form} onSubmit={(event) => event.preventDefault()}>
           <Text size="lg" weight={700} className={classes.title}>
-            Get in touch
+            Leave the info
           </Text>
 
           <div className={classes.fields}>
             <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
               <TextInput label="Your name" placeholder="Your name" />
-              <TextInput label="Your email" placeholder="hello@mantine.dev" required />
+              <TextInput label="Your phone num." placeholder="+420 ...." required />
             </SimpleGrid>
 
-            <TextInput mt="md" label="Subject" placeholder="Subject" required />
-
-            <Textarea
-              mt="md"
-              label="Your message"
-              placeholder="Please include all relevant information"
-              minRows={3}
-            />
+            <TextInput mt="md" label="Time to call" placeholder="11:30-11:45" required />
 
             <Group position="right" mt="md">
               <Button type="submit" className={classes.control}>

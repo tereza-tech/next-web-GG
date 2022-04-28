@@ -2,6 +2,7 @@
   padding: 0 2rem;
 }
 
+
 .main {
   min-height: 100vh;
   padding: 1rem 0;
@@ -19,6 +20,7 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .footer a {
@@ -71,6 +73,7 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
+  position: relative;
 }
 
 .card {
@@ -108,9 +111,34 @@
   margin-left: 0.5rem;
 }
 
+.sofa {
+  position: absolute;
+  width: 25%;
+  left: 76px;
+  margin-top: 1111px;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
   }
+  .grid .sofa {
+    display: none;
+  }
+}
+
+.skate {
+  position: absolute;
+  width: 15%;
+  right: 80px;
+  top: -170px;
+}
+
+.relative {
+  position: relative;
+}
+
+.hidden {
+  display: none!important;
 }
