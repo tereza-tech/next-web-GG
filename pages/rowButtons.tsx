@@ -11,12 +11,14 @@ export function YellowButton(props: ButtonProps<'button'>) {
     <Button sx={(theme) => ({
         backgroundColor: theme.colors.yellow[4],
         color: 'white',
-        width: '150px',
-        fontFamily: 'WhichWay',
-        fontSize: '9px',
-        fontWeight: '100',
+        width: '30vw',
+        maxWidth: '185px',
+        marginBottom: '-4px',
+        height: '6vw',
+        maxHeight: '38.5px',
+        fontSize: '95%',
         '&:hover': {
-          backgroundColor: theme.fn.darken('#4267B2', 0.1),
+          backgroundColor: theme.colors.yellow[7],
         },
       })} onClick={() => redirectToLink('https://mantine.dev/')} {...props} />
   );
@@ -29,7 +31,7 @@ export function GreyAnchorButton(props: ButtonProps<'a'>) {
 
 export function RowButtons() {
   return (
-    <Group position="center" sx={{ padding: 15 }}>
+    <Group position="center" sx={{ padding: 10 }}>
       <YellowButton>Naše Služby</YellowButton>
       <YellowButton>Ceníky</YellowButton>
       <YellowButton>Mořské pochoutky</YellowButton>

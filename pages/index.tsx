@@ -5,6 +5,9 @@ import { Image, Title, Group, ActionIcon, Button, MantineProvider , Text} from '
 //import { HeaderSimple } from './headerComponent'
 import { HeaderMiddle } from './header3Component'
 import { ArticleCard } from './cardComponent'
+import { HeroBullets } from './heroBulletsComponent'
+import { YellowBullets } from './yellowBulletsComponent'
+import { GetInTouch } from './getInTouchComponent'
 import { RowButtons } from './rowButtons'
 import Links from './api/links.json'
 
@@ -28,10 +31,11 @@ const Home: NextPage = () => {
         </ArticleCard>
         <RowButtons></RowButtons>
         <Title order={2}>We are damn cool company!</Title>
+        <HeroBullets></HeroBullets>
+        <YellowBullets></YellowBullets>
         <MantineProvider styles={{ Text: { root: { fontFamily: 'WhichWay, sans-serif' } } }}>
       <Text>20px text</Text>
     </MantineProvider>
-        
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
@@ -66,7 +70,7 @@ const Home: NextPage = () => {
             </p>
           </a>
         </div>
-
+<GetInTouch></GetInTouch>
       </main>
 
       <footer className={styles.footer}>

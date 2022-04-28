@@ -16,6 +16,8 @@ import {
 const useStyles = createStyles((theme) => ({
   card: {
     position: 'relative',
+    width: '70%',
+    height: '35vw',
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
   },
 
@@ -78,7 +80,7 @@ export function ArticleCard({
     <Card withBorder radius="0" className={cx(classes.card, className)} {...others}>
       <Card.Section>
         <a {...linkProps}>
-          <Image src={image} height={180} />
+          <Image className={classes.footer} src={image} />
         </a>
       </Card.Section>
 
