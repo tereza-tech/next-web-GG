@@ -1,33 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Dialog, Group, Button, TextInput, Text } from '@mantine/core';
 import {
   Paper,
-  Text,
-  TextInput,
   Textarea,
   ThemeIcon,
   Icon,
-  Button,
-  Group,
   SimpleGrid,
   createStyles,
 } from '@mantine/core';
 import { ContactIconsList } from './ContactIcons/ContactIcons';
 import { Phone } from 'tabler-icons-react';
-import bg from './bg.svg';
-
-let toggle: boolean = false;
-
- const toggleSwitch = ()  => {
-   console.log(1, toggle)
-    if (toggle === false) {
-       toggle = true
-      console.log(2, toggle)
-    } else { toggle = false; console.log(3, toggle) }
-  }
 
 const useStyles = createStyles((theme) => {
   const BREAKPOINT = theme.fn.smallerThan('sm');
-
   return {
     wrapper: {
       display: 'flex',
@@ -43,7 +28,6 @@ const useStyles = createStyles((theme) => {
       },
     },
     button: {
-      display: toggle ? 'none' : 'block',
       backgroundColor: 'yellow',
       paddingRight: 14,
       height: 48,
@@ -52,18 +36,14 @@ const useStyles = createStyles((theme) => {
       backgroundColor: 'yellow',
       position: 'fixed',
       right: 0,
-      marginTop: '9%',
+      marginTop: '25%',
     },
     contacts: {
-      display: toggle ? 'block' : 'none',
       boxSizing: 'border-box',
       position: 'fixed',
       right: 0,
       top: 'calc(50% - 170px)',
       borderRadius: theme.radius.lg - 2,
-      backgroundImage: `url(${bg.src})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
       border: '1px solid transparent',
       padding: theme.spacing.xl,
       flex: '0 0 265px',
@@ -88,35 +68,58 @@ const useStyles = createStyles((theme) => {
         flex: 1,
       },
     },
+
+    dialog: {
+      position: 'fixed',
+      top: '35%',
+      right: 0,
+    },
+    toggler: {
+      position: 'absolute',
+      top: 0,
+      right: 0,
+    },
   };
 });
 
-export function ContactUs() {
-  const { classes } = useStyles();
+
+export function Togglable() {
+  const { classes, sx } = useStyles();
+  const [opened, setOpened] = useState(false);
 
   return (
-    <Paper shadow="md" radius="lg">
-      <Button
+    <>
+      <Dialog
+        opened={!opened}
+        className={classes.toggler}
+      >
+        <Button
         leftIcon={<Phone size={20} />}
         radius="xl"
         size="md"
         className={classes.button}
         styles={{
+          display: opened ? 'none' : 'block',
           rightIcon: { marginLeft: 22 },
         }}    
-        onClick={() => {toggleSwitch()}}
+        onClick={() => setOpened((o) => !o)}
       >
        Kontakt
       </Button>
-      <div className={classes.wrapper}>
-        <div className={classes.contacts}>
-          <Text size="lg" weight={700} className={classes.title} sx={{ color: '#fff' }}>
-            Contact information
-          </Text>
+      </Dialog>
+      <Dialog
+        opened={opened}
+        withCloseButton
+        onClose={() => setOpened(false)}
+        size="md"
+        radius="md"
+        className={classes.dialog}
+      >
+        <ContactIconsList variant="white"></ContactIconsList>
+        <Group align="flex-end">
 
-          <ContactIconsList variant="white" />
-        </div>
-      </div>
-    </Paper>
+        </Group>
+      </Dialog>
+    </>
   );
 }

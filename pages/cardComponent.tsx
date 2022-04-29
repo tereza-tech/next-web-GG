@@ -12,6 +12,7 @@ import {
   useMantineTheme,
   createStyles,
 } from '@mantine/core';
+import { RowButtons } from './rowButtons'
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -20,7 +21,6 @@ const useStyles = createStyles((theme) => ({
     height: '35vw',
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
   },
-
   rating: {
     position: 'absolute',
     top: theme.spacing.xs,
@@ -65,7 +65,7 @@ export function ArticleCard({
   ...others
 }: ArticleCardProps & Omit<React.ComponentPropsWithoutRef<'div'>, keyof ArticleCardProps>) {
   const { classes, cx } = useStyles();
-  let image = 'image_1.jpg';
+  let image = 'image_2.png';
   let link = 'http://google.com';
   let title = 'Title';
   let description = 'Description';
@@ -82,6 +82,7 @@ export function ArticleCard({
         <a {...linkProps}>
           <Image className={classes.footer} src={image} />
         </a>
+        <RowButtons></RowButtons>
       </Card.Section>
 
 

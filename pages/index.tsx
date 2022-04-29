@@ -8,10 +8,9 @@ import { ArticleCard } from './cardComponent'
 import { HeroBullets } from './heroBulletsComponent'
 import { YellowBullets } from './yellowBulletsComponent'
 import { CardInTouch } from './cardInTouchComponent'
-import { ContactUs } from './contactUsComponent'
 import { TwoFlexContact } from './twoFlexContactComponent'
 import { ThreeTiles } from './threeTilesComponent'
-import { RowButtons } from './rowButtons'
+import { Togglable } from './togglableComponent'
 import Links from './api/links.json'
 import Categories from './api/tiles.json'
 
@@ -25,7 +24,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <ContactUs></ContactUs>
+        <Togglable></Togglable>
         <HeaderMiddle links={Links.Links}></HeaderMiddle>
         <ArticleCard>
           <Image
@@ -34,7 +33,7 @@ const Home: NextPage = () => {
         alt="Random unsplash image"
       />
         </ArticleCard>
-        <RowButtons></RowButtons>
+        
         <Title order={2}>We are damn cool company!</Title>
         <HeroBullets></HeroBullets>
         <YellowBullets></YellowBullets>
