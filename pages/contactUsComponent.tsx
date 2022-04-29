@@ -1,111 +1,114 @@
 import React from 'react';
 import {
-  createStyles,
+  Paper,
   Text,
-  Title,
-  SimpleGrid,
   TextInput,
   Textarea,
+  ThemeIcon,
+  Icon,
   Button,
   Group,
-  ActionIcon,
-  Image
+  SimpleGrid,
+  createStyles,
 } from '@mantine/core';
-import { BrandTwitter, BrandYoutube, BrandInstagram } from 'tabler-icons-react';
 import { ContactIconsList } from './ContactIcons/ContactIcons';
-import image from '../public/comics_couple.png';
+import { Phone } from 'tabler-icons-react';
+import bg from './bg.svg';
 
-const useStyles = createStyles((theme) => ({
-  wrapper: {
-    minHeight: 400,
-    boxSizing: 'border-box',
-    backgroundImage: `linear-gradient(-60deg, ${theme.colors[theme.primaryColor][4]} 0%, ${
-      theme.colors[theme.primaryColor][7]
-    } 100%)`,
-    borderRadius: theme.radius.md,
-    padding: theme.spacing.xl * 2.5,
+const useStyles = createStyles((theme) => {
+  const BREAKPOINT = theme.fn.smallerThan('sm');
 
-    [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-      padding: theme.spacing.xl * 1.5,
+  let toggle: boolean = false;
+
+  return {
+    wrapper: {
+      display: 'flex',
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
+      borderRadius: theme.radius.lg,
+      padding: 4,
+      border: `1px solid ${
+        theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[2]
+      }`,
+
+      [BREAKPOINT]: {
+        flexDirection: 'column',
+      },
     },
-  },
-
-  title: {
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    color: theme.white,
-    lineHeight: 1,
-  },
-
-  description: {
-    color: theme.colors[theme.primaryColor][0],
-    maxWidth: 300,
-
-    [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-      maxWidth: '100%',
+    button: {
+      display: toggle ? 'none' : 'block',
+      backgroundColor: 'yellow',
+      paddingRight: 14,
+      height: 48,
+      color: 'black', 
+      borderRadius: '14px 0 0 14px',
+      backgroundColor: 'yellow',
+      position: 'fixed',
+      right: 0,
+      marginTop: '9%',
     },
-  },
+    contacts: {
+      display: toggle ? 'block' : 'none',
+      boxSizing: 'border-box',
+      position: 'fixed',
+      right: 0,
+      top: 'calc(50% - 170px)',
+      borderRadius: theme.radius.lg - 2,
+      backgroundImage: `url(${bg.src})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      border: '1px solid transparent',
+      padding: theme.spacing.xl,
+      flex: '0 0 265px',
 
-  form: {
-    padding: theme.spacing.xl,
-    borderRadius: theme.radius.md,
-    boxShadow: theme.shadows.lg,
-  },
-
-  social: {
-    color: theme.white,
-
-    '&:hover': {
-      color: theme.colors[theme.primaryColor][1],
+      [BREAKPOINT]: {
+        marginBottom: theme.spacing.sm,
+        paddingLeft: theme.spacing.md,
+      },
     },
-  },
 
-  input: {
-    backgroundColor: theme.white,
-    borderColor: theme.colors.gray[4],
-    color: theme.black,
+    title: {
+      marginBottom: theme.spacing.xl * 1.5,
+      fontFamily: `Greycliff CF, ${theme.fontFamily}`,
 
-    '&::placeholder': {
-      color: theme.colors.gray[5],
+      [BREAKPOINT]: {
+        marginBottom: theme.spacing.xl,
+      },
     },
-  },
 
-  inputLabel: {
-    color: theme.black,
-  },
-
-  control: {
-    backgroundColor: theme.colors[theme.primaryColor][6],
-  },
-}));
-
-const social = [BrandTwitter, BrandYoutube, BrandInstagram];
+    control: {
+      [BREAKPOINT]: {
+        flex: 1,
+      },
+    },
+  };
+});
 
 export function ContactUs() {
   const { classes } = useStyles();
 
-  const icons = social.map((Icon, index) => (
-    <ActionIcon key={index} size={28} className={classes.social} variant="transparent">
-      <Icon size={22} />
-    </ActionIcon>
-  ));
-
   return (
-    <div className={classes.wrapper}>
-      <SimpleGrid cols={2} spacing={50} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-        <div>
-          <Title className={classes.title}>Contact us</Title>
-          <Text className={classes.description} mt="sm" mb={30}>
-            Leave your email and we will get back to you within 24 hours
+    <Paper shadow="md" radius="lg">
+      <Button
+        leftIcon={<Phone size={20} />}
+        radius="xl"
+        size="md"
+        className={classes.button}
+        styles={{
+          rightIcon: { marginLeft: 22 },
+        }}    
+        onClick={() => toggleSwitch()}
+      >
+       Kontakt
+      </Button>
+      <div className={classes.wrapper}>
+        <div className={classes.contacts}>
+          <Text size="lg" weight={700} className={classes.title} sx={{ color: '#fff' }}>
+            Contact information
           </Text>
 
           <ContactIconsList variant="white" />
-
-          <Group mt="xl">{icons}</Group>
         </div>
-        <div className={classes.form}>
-           <Image src={image.src} />
-        </div>
-      </SimpleGrid>
-    </div>
+      </div>
+    </Paper>
   );
 }

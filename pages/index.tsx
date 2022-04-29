@@ -8,6 +8,7 @@ import { ArticleCard } from './cardComponent'
 import { HeroBullets } from './heroBulletsComponent'
 import { YellowBullets } from './yellowBulletsComponent'
 import { CardInTouch } from './cardInTouchComponent'
+import { ContactUs } from './contactUsComponent'
 import { TwoFlexContact } from './twoFlexContactComponent'
 import { ThreeTiles } from './threeTilesComponent'
 import { RowButtons } from './rowButtons'
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <ContactUs></ContactUs>
         <HeaderMiddle links={Links.Links}></HeaderMiddle>
         <ArticleCard>
           <Image

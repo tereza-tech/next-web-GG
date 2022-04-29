@@ -127,7 +127,12 @@ export function CardInTouch() {
             </SimpleGrid>
 
             <TextInput mt="md" label="Time to call" placeholder="11:30-11:45" required />
-
+<Textarea
+              mt="md"
+              label="Your message"
+              placeholder="Please include all relevant information"
+              minRows={3}
+            />
             <Group position="right" mt="md">
               <Button type="submit" className={classes.control}>
                 Send message
