@@ -25,6 +25,7 @@ const useStyles = createStyles((theme) => ({
 
   content: {
     maxWidth: 480,
+    paddingLeft: theme.spacing.xl * 3.5,
     marginRight: theme.spacing.xl * 3,
     paddingTop: theme.spacing.md * 2,
     paddingBottom: theme.spacing.sm,
@@ -77,6 +78,7 @@ export function YellowBullets() {
     <div className={classes.outer}>
       <Container>
         <div className={classes.inner}>
+          <Image src={image.src} className={classes.image} />
           <div className={classes.content}>
             <Title className={classes.title}>
               A <span className={classes.highlight}>modern</span> React <br /> components library
@@ -97,7 +99,6 @@ export function YellowBullets() {
               </Button>
             </Group>
           </div>
-          <Image src={image.src} className={classes.image} />
         </div>
       </Container>
     </div>

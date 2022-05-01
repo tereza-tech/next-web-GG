@@ -1,17 +1,30 @@
 import React, { useState } from 'react';
-import { createStyles, Header, Container, Group, Burger } from '@mantine/core';
+import { createStyles, Header, Container, Group, Burger, Icon, Button, Text, Image } from '@mantine/core';
+import { FacebookIcon } from './socialIcons';
 import { useBooleanToggle } from '@mantine/hooks';
-import { GiraffeLogo } from './giraffeComponents';
+import { Logo, GiraffeLogo, SocialIcons } from './giraffeComponents';
+
 
 const useStyles = createStyles((theme) => ({
   header: {
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center',
     height: '100%',
+    alignItems: 'flex-start',
+  },
+
+  outer: {
+      width: '100%',
+      border: 'none',
   },
 
   links: {
+    position: 'relative',
+    right: '-70px',
+    width: 260,
+    paddingTop: 11,
+    minWidth: 460,
+    fontFamily: 'WhichWay',
     [theme.fn.smallerThan('xs')]: {
       display: 'none',
     },
@@ -53,6 +66,7 @@ interface HeaderSimpleProps {
   links: { link: string; label: string }[];
 }
 
+
 export function HeaderSimple({ links }: HeaderSimpleProps) {
   const [opened, toggleOpened] = useBooleanToggle(false);
   const [active, setActive] = useState(links[0].link);
@@ -73,20 +87,12 @@ export function HeaderSimple({ links }: HeaderSimpleProps) {
   ));
 
   return (
-    <Header height={60} mb={120}>
+    <Container height={128} mb={5} className={classes.outer}>
       <Container className={classes.header}>
-        <GiraffeLogo/>
-        <Group spacing={5} className={classes.links}>
-          {items}
-        </Group>
-
-        <Burger
-          opened={opened}
-          onClick={() => toggleOpened()}
-          className={classes.burger}
-          size="sm"
-        />
+        <Logo></Logo>
+        <SocialIcons></SocialIcons>
+        <GiraffeLogo></GiraffeLogo>
       </Container>
-    </Header>
+    </Container>
   );
 }

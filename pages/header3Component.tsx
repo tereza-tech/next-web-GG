@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { createStyles, Header, Group, ActionIcon, Container, Burger } from '@mantine/core';
 import { useBooleanToggle } from '@mantine/hooks';
 import { Logo, GiraffeLogo } from './giraffeComponents';
+import { Grid, Skeleton } from '@mantine/core';
+
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -50,6 +52,7 @@ const useStyles = createStyles((theme) => ({
     display: 'block',
     lineHeight: 1,
     padding: '8px 12px',
+    width: '100%',
     borderRadius: theme.radius.sm,
     textDecoration: 'none',
     color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
@@ -96,12 +99,12 @@ export function HeaderMiddle({ links }: HeaderMiddleProps) {
   ));
 
   return (
-    <Header height="calc(60px + 6vw)" width="100%" mb={20}>
+    <Header height="calc(60px + 6vw)" width="100%">
       <Container className={classes.inner}>
-
-      <Logo />
-
-        <Burger
+      <Container my="md">
+      <Grid>
+        <Grid.Col xs={4}> <Logo /></Grid.Col>
+        <Grid.Col xs={7}><Burger
           opened={opened}
           onClick={() => toggleOpened()}
           size="sm"
@@ -109,11 +112,10 @@ export function HeaderMiddle({ links }: HeaderMiddleProps) {
         />
         <Group className={classes.links} spacing={5}>
           {items}
-        </Group>
-
-        <GiraffeLogo />
-
-       
+        </Group></Grid.Col>
+        <Grid.Col xs={1}><GiraffeLogo /></Grid.Col>
+      </Grid>
+        </Container>
       </Container>
     </Header>
   );

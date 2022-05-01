@@ -34,7 +34,7 @@ const useStyles = createStyles((theme) => ({
 
   title: {
     color: theme.colorScheme === 'dark' ? theme.white : theme.black,
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontFamily: `WhichWay, ${theme.fontFamily}`,
     fontSize: 44,
     lineHeight: 1.2,
     fontWeight: 900,
@@ -55,7 +55,7 @@ const useStyles = createStyles((theme) => ({
     position: 'relative',
   },
   image: {
-    width: '75%',
+    width: '55%',
     float: 'right',
     [theme.fn.smallerThan('md')]: {
       display: 'none',
@@ -98,7 +98,7 @@ export function HeroBullets() {
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title className={classes.title}>
-              A <span className={classes.highlight}>modern</span> React <br /> components library
+              Stěhujeme
             </Title>
             <Text color="dimmed" mt="md">
               Build fully functional accessible web applications faster than ever – Mantine includes

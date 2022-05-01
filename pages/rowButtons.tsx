@@ -18,8 +18,8 @@ const useStyles = createStyles((theme) => ({
   button: {
     backgroundColor: theme.colors.yellow[4],
     color: 'white',
-    width: '30vw',
-    maxWidth: '185px',
+    width: '34vw',
+    maxWidth: '205px',
     marginBottom: '-4px',
     height: '6vw',
     maxHeight: '38.5px',

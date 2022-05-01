@@ -3,11 +3,11 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Image, Title, Group, ActionIcon, Button, MantineProvider , Text} from '@mantine/core'
 //import { HeaderSimple } from './headerComponent'
-import { HeaderMiddle } from './header3Component'
-import { ArticleCard } from './cardComponent'
+import { HeaderSimple } from './headerComponent'
 import { HeroBullets } from './heroBulletsComponent'
 import { YellowBullets } from './yellowBulletsComponent'
 import { CardInTouch } from './cardInTouchComponent'
+import { RowButtons } from './rowButtons2'
 import { TwoFlexContact } from './twoFlexContactComponent'
 import { ThreeTiles } from './threeTilesComponent'
 import { Togglable } from './togglableComponent'
@@ -25,21 +25,15 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <Togglable></Togglable>
-        <HeaderMiddle links={Links.Links}></HeaderMiddle>
-        <ArticleCard>
-          <Image
-        radius="md"
-        src="https://images.unsplash.com/photo-1511216335778-7cb8f49fa7a3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
-        alt="Random unsplash image"
-      />
-        </ArticleCard>
         
-        <Title order={2}>We are damn cool company!</Title>
+        <HeaderSimple links={Links.Links}></HeaderSimple>
+     
+        <Image className={styles.heroimg} src="/image_7.png"></Image>
+        <Image src="/chess.png"></Image>
+
         <HeroBullets></HeroBullets>
         <YellowBullets></YellowBullets>
-        <ThreeTiles className={styles.hidden} categories={Categories.Categories}></ThreeTiles><Image className={styles.sofa} src="/comics_sofa.png"></Image>
         <MantineProvider styles={{ Text: { root: { fontFamily: 'WhichWay, sans-serif' } } }}>
-      <Text>20px text</Text>
     </MantineProvider>
         <p className={styles.description}>
           Get started by editing{' '}
@@ -75,8 +69,8 @@ const Home: NextPage = () => {
             </p>
           </a>
         </div>
+        <CardInTouch></CardInTouch>
         <TwoFlexContact></TwoFlexContact>
-<CardInTouch></CardInTouch>
       </main>
       <footer className={styles.footer}>
         <Image src="/comics_skate.png" className={styles.skate}></Image>

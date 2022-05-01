@@ -1,17 +1,25 @@
 import React from 'react';
-import { createStyles, Button, ButtonProps, Group } from '@mantine/core';
+import { Button, ButtonProps, Group } from '@mantine/core';
 import { MarkGithubIcon } from '@primer/octicons-react';
 
 export function GoogleButton(props: ButtonProps<'button'>) {
   return <Button leftIcon={<GoogleIcon />} variant="default" color="gray" {...props} />;
 }
 
-const useStyles = createStyles((theme) => ({}));
-
-  
 export function YellowButton(props: ButtonProps<'button'>) {
   return (
-    <Button className={classes.buton} onClick={() => redirectToLink('https://mantine.dev/')} {...props} />
+    <Button sx={(theme) => ({
+        backgroundColor: theme.colors.yellow[4],
+        color: 'white',
+        height: 50,
+        width: '180px',
+        fontFamily: 'WhichWay',
+        fontSize: '9px',
+        fontWeight: '100',
+        '&:hover': {
+          backgroundColor: theme.fn.darken('#4267B2', 0.1),
+        },
+      })} onClick={() => redirectToLink('https://mantine.dev/')} {...props} />
   );
 }
 
@@ -21,25 +29,20 @@ export function GreyAnchorButton(props: ButtonProps<'a'>) {
 }
 
 export function RowButtons() {
-  const { classes } = useStyles();
-  
   return (
-    <div className={classes.area}>
-    <Group position="center" className={classes.row}>
+    <Group position="center" sx={{ padding: 18 }}>
       <YellowButton>Naše Služby</YellowButton>
-      <YellowButton>Ceníky</YellowButton>
-      <YellowButton>Mořské pochoutky</YellowButton>
-      <YellowButton>Další čudlík</YellowButton>
+      <YellowButton>Ceník</YellowButton>
+      <YellowButton>Reference</YellowButton>
+      <YellowButton>O firmě</YellowButton>
+      <YellowButton>Kontakty</YellowButton>
     </Group>
-    </div>
   );
 }
 
 export function RowGreyButtons() {
-  const { classes } = useStyles();
-  
   return (
-    <Group position="center" sx={{ padding: 15 }}>
+    <Group position="center" sx={{ padding: 15, paddingTop: 0 }}>
       <GreyAnchorButton href="https://twitter.com/mantinedev" target="_blank">
         Follow on Twitter
       </GreyAnchorButton>
@@ -53,5 +56,5 @@ export function RowGreyButtons() {
         Follow on Twitter
       </GreyAnchorButton>
     </Group>
-  );
+  )
 }

@@ -5,7 +5,7 @@
 
 .main {
   min-height: 100vh;
-  padding: 1rem 0;
+  padding: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -17,10 +17,17 @@
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  border-top: 'none';
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+.heroimg {
+  width: 100%;
+  max-width: 1000px;
+  height: 380px;
+  border-top: 'none!important';
 }
 
 .footer a {
@@ -82,7 +89,7 @@
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  border: none;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
@@ -92,7 +99,7 @@
 .card:focus,
 .card:active {
   color: #0070f3;
-  border-color: #0070f3;
+  border-color: yellow;
 }
 
 .card h2 {
@@ -141,4 +148,7 @@
 
 .hidden {
   display: none!important;
+}
+
+.back {
 }
