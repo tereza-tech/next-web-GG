@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
-import { Image } from '@mantine/core';
+import { Image, createStyles } from '@mantine/core';
+
+const useStyles = createStyles((theme) => ({
+  iconboard: {
+    width: 40,
+    position: 'fixed',
+    top: 143,
+    right: 25,
+  },
+  socimage : {
+    marginBottom: 18,
+  }
+}));
 
 export function Logo() {
   return (
@@ -26,26 +38,27 @@ export function GiraffeLogo() {
   );
 }
 
-export function SocialButtons() {
+export function SocialIcons() {
+  const { classes } = useStyles();
   return (
-    <div style={{ width: 168, paddingTop: 5, paddingLeft: 15}}>
+    <div className={classes.iconboard}>
       <Image
-        radius="md"
+        className={classes.socimage}
         src="/icons/instagram.svg"
         alt="Which Way logo"
       />
       <Image
-        radius="md"
+        className={classes.socimage}
         src="/icons/messenger.svg"
         alt="Which Way logo"
       />
       <Image
-        radius="md"
+        className={classes.socimage}
         src="/icons/whatsapp.svg"
         alt="Which Way logo"
       />
       <Image
-        radius="md"
+        className={classes.socimage}
         src="/icons/google.svg"
         alt="Which Way logo"
       />
