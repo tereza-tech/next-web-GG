@@ -15,7 +15,7 @@ const useStyles = createStyles((theme) => ({
 
 export function Logo() {
   return (
-    <div style={{ width: 'calc(60px + 10vw)', marginTop: 26}}>
+    <div style={{ width: 'calc(65px + 9vw)', marginTop: 26}}>
       <Image
         radius="md"
         src="/Logo.png"
@@ -27,7 +27,7 @@ export function Logo() {
 
 export function GiraffeLogo() {
   return (
-    <div style={{ width: 168, paddingTop: 5, paddingLeft: 15}}>
+    <div style={{ width: 148, paddingTop: 15, paddingLeft: 15}}>
       <Image
         radius="md"
         src="/Giraffe_logo.png"

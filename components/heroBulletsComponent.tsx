@@ -17,15 +17,14 @@ import image2 from '../public/comics_sofa.png';
 const useStyles = createStyles((theme) => ({
   inner: {
     display: 'flex',
-    width: '130%',
     justifyContent: 'space-between',
+    width: '105%',
     position: 'relative',
-    left: '-15%',
+    left: '-2.5%',
     marginTop: theme.spacing.xl,
-    paddingBottom: theme.spacing.xl * 4,
     paddingLeft: theme.spacing.xl * 3,
-    marginBottom: theme.spacing.xl * 2.5,
-    height: 560,
+    marginBottom: theme.spacing.xl * 2,
+    height: 500,
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
       borderRadius: theme.radius.lg,
   },
@@ -43,9 +42,9 @@ const useStyles = createStyles((theme) => ({
   title: {
     color: theme.colorScheme === 'dark' ? theme.white : theme.black,
     fontFamily: `WhichWay, ${theme.fontFamily}`,
-    fontSize: 44,
+    fontSize: 25,
     lineHeight: 1.2,
-    fontWeight: 900,
+    fontWeight: 100,
     marginTop: 50,
     [theme.fn.smallerThan('xs')]: {
       fontSize: 28,
@@ -53,7 +52,6 @@ const useStyles = createStyles((theme) => ({
   },
 
   control: {
-    transform: 'scale(1.16)',
     marginRight: 20,
     [theme.fn.smallerThan('xs')]: {
       flex: 2,
@@ -62,7 +60,6 @@ const useStyles = createStyles((theme) => ({
 
   controlwh: {
     color: 'black',
-    transform: 'scale(1.16)',
     marginRight: 20,
     [theme.fn.smallerThan('xs')]: {
       flex: 2,
@@ -75,24 +72,23 @@ const useStyles = createStyles((theme) => ({
     opacity: '0.87',
     top: 40,
     left: '-30px',
-    transform: 'scale(0.9, 0.9)',
   },
   image: {
-    width: '38%',
+    width: '41%',
     position: 'relative',
-    left: '-10%',
-top: '7px',
+    left: '-24%',
+top: '127px',
 opacity: '0.85',
     [theme.fn.smallerThan('md')]: {
       display: 'none',
     },
   },
   image2: {
-    width: '586px',
+    width: '448px',
     height: 'auto',
     position: 'absolute',
-    bottom: '-17px',
-    right: '-23px',
+    bottom: '70px',
+    right: '-1px',
     [theme.fn.smallerThan('md')]: {
       display: 'none',
     },
@@ -123,7 +119,6 @@ opacity: '0.85',
 export function HeroBullets() {
   const { classes } = useStyles();
   return (
-    <div>
       <Container>
         <div className={classes.inner}>
           <div className={classes.content}>
@@ -202,7 +197,6 @@ export function HeroBullets() {
 
         </div>
       </Container>
-    </div>
   );
 }
 /*

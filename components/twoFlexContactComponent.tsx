@@ -73,14 +73,10 @@ export function TwoFlexContact() {
         <div className={classes.outer}>
           <div className={classes.content}>
 
-          <Title className={classes.title}>Contact us</Title>
+          <Title className={classes.title}>About Us</Title>
           <Text className={classes.description} mt="sm" mb={30}>
-            Leave your email and we will get back to you within 24 hours
+            We are blabl bla ...
           </Text>
-
-          <ContactIconsList variant="white" />
-
-          <Group mt="xl">{icons}</Group>
 
           </div>
           <Image src={image.src} className={classes.image} />

@@ -45,7 +45,7 @@ const Home: NextPage = () => {
           <Image className={styles.miniic2} src="/van.png"></Image>
           <Image className={styles.miniic1} src="/worker_1.png"></Image>
           </div>
-            <h2>Auto + 1 &rarr;</h2>
+            <h3>Auto + 1 &rarr;</h3>
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
 
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
           <Image className={styles.miniic2} src="/van.png"></Image>
           <Image className={styles.miniic1} src="/worker_1.png"></Image>
           <Image className={styles.miniic1} src="/worker_2.png"></Image></div>
-            <h2>Auto + 2 &rarr;</h2>
+            <h3>Auto + 2 &rarr;</h3>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
 
@@ -67,7 +67,7 @@ const Home: NextPage = () => {
           
           <Image className={styles.miniic1} src="/worker_2.png"></Image>
           </div>
-            <h2>Auto + 3 &rarr;</h2>
+            <h3>Auto + 3 &rarr;</h3>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
 
@@ -75,7 +75,7 @@ const Home: NextPage = () => {
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
           ><div className={styles.pricelogos}></div>
-            <h2>Více &rarr;</h2>
+            <h3>Více &rarr;</h3>
             <p>
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
@@ -84,11 +84,11 @@ const Home: NextPage = () => {
         <YellowBullets></YellowBullets>
         
         <CardInTouch></CardInTouch>
-        <Image className={styles.heroimg} src="/image_7.png"></Image>
+        
         <TwoFlexContact></TwoFlexContact>
+        <Image className={styles.heroimg} src="/image_7.png"></Image>
       </main>
       <footer className={styles.footer}>
-        <Image src="/comics_skate.png" className={styles.skate}></Image>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"

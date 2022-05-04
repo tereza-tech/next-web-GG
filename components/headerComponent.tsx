@@ -25,6 +25,7 @@ const useStyles = createStyles((theme) => ({
   numbers: {    
     marginLeft: 35,
     paddingTop: 45,
+    fontSize: 17,
   },
 
   phonen: {
@@ -138,13 +139,12 @@ export function HeaderSimpler({ links }: HeaderSimpleProps) {
   ));
 
   return (
-    <Container mt={30} mb={10} className={classes.outer}>
+    <Container mt={10} mb={0} className={classes.outer}>
       <Container className={classes.header}>
-        <span className={classes.lefter}><Logo></Logo><span className={classes.numbers}><h2 className={classes.phonen}>+420 777 253 732</h2><h2 className={classes.phonen}>+420 777 253 732</h2></span></span>
+        <span className={classes.lefter}><Logo></Logo><span className={classes.numbers}><h3 className={classes.phonen}>+420 777 253 732</h3><h3 className={classes.phonen}>+420 777 253 732</h3></span></span>
         <SocialIcons></SocialIcons>
         <GiraffeLogo></GiraffeLogo>
         <Image src={image.src} className={classes.hidden} />
-        <Image className={classes.corner} src={image2.src} />
       </Container>
       
     </Container>

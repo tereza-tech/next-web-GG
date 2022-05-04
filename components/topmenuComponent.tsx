@@ -4,8 +4,8 @@ import { createStyles, Button, ButtonProps, Group } from '@mantine/core';
 
 const useStyles = createStyles((theme) => ({
   lineup: {
-    marginTop: 12,
-    marginBottom: 12,
+    marginTop: 7,
+    marginBottom: 8,
   },
 
   yellow: {
@@ -19,7 +19,7 @@ export function YellowButton(props: ButtonProps<'button'>) {
         backgroundColor: theme.colors.yellow[4],
         color: 'white',
         height: 50,
-        width: '180px',
+        width: '123px',
         fontFamily: 'WhichWay',
         fontSize: '9px',
         fontWeight: '100',
@@ -32,7 +32,7 @@ export function YellowButton(props: ButtonProps<'button'>) {
 
 // Twitter button as anchor
 export function GreyAnchorButton(props: ButtonProps<'a'>) {
-  return <Button component="a" variant="default" sx={{ width: '130px', padding: 4, fontSize: '16px', paddingTop: 0 }} {...props} />;
+  return <Button component="a" variant="default" sx={{ width: '110px', padding: 4, fontSize: '16px', paddingTop: 0 }} {...props} />;
 }
 
 export function RowButtons() {
@@ -49,8 +49,8 @@ export function RowButtons() {
 export function BannerLine() {
   const { classes } = useStyles();
   return (
-    <Group position="center" sx={{ width: '100%', backgroundColor: '#2d2d2d', gap: 20}}>
-      <h3 className={classes.lineup}>STĚHOVÁNÍ <span className={classes.yellow}>PRAHA</span></h3><h3 className={classes.lineup}> -- </h3><h3 className={classes.lineup}>STĚHOVÁNÍ STŘEDNÍ ČECHY</h3><h3 className={classes.lineup}> -- </h3><h3 className={classes.lineup}>STĚHOVÁNÍ <span className={classes.yellow}>PRAHA</span></h3>
+    <Group position="center" sx={{ width: '100%', height: 44, paddingTop: 0, backgroundColor: '#2d2d2d', gap: 20}}>
+      <h4 className={classes.lineup}><span className={classes.yellow}>STĚHOVÁNÍ </span>PRAHA</h4><h4 className={classes.lineup}> -- </h4><h4 className={classes.lineup}>STĚHOVÁNÍ STŘEDNÍ ČECHY</h4><h4 className={classes.lineup}> -- </h4><h4 className={classes.lineup}><span className={classes.yellow}>STĚHOVÁNÍ </span>PRAHA</h4>
     </Group>
   )
 }

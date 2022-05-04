@@ -26,6 +26,7 @@ const useStyles = createStyles((theme) => {
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
       borderRadius: theme.radius.lg,
       padding: 4,
+      width: '800px',
       border: `1px solid ${
         theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[2]
       }`,
@@ -60,7 +61,6 @@ const useStyles = createStyles((theme) => {
         opacity: '0.92',
         top: 40,
         left: '-30px',
-        transform: 'scale(0.9, 0.9)'
       },
       image: {
         width: '47%',

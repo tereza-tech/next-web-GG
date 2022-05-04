@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  ActionIcon,
   Paper,
   Text,
   TextInput,
@@ -8,7 +9,11 @@ import {
   Group,
   SimpleGrid,
   createStyles,
+  Title
 } from '@mantine/core';
+import image from '../public/comics_couple.png';
+import { BrandTwitter, BrandYoutube, BrandInstagram } from 'tabler-icons-react';
+import { ContactIconsList } from './ContactIcons/ContactIcons';
 
 const useStyles = createStyles((theme) => {
   const BREAKPOINT = theme.fn.smallerThan('sm');
@@ -16,6 +21,10 @@ const useStyles = createStyles((theme) => {
   return {
     wrapper: {
       display: 'flex',
+      marginTop: theme.spacing.xl * 2,
+      width: '118%',
+      position: 'relative',
+      left: '-3%',
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
       borderRadius: theme.radius.lg,
       padding: 4,
@@ -30,10 +39,11 @@ const useStyles = createStyles((theme) => {
 
     form: {
       boxSizing: 'border-box',
-      flex: 1,
+      flex: 2,
       padding: theme.spacing.xl,
       borderLeft: 0,
       paddingRight: 'auto',
+      paddingTop: theme.spacing.xl * 3,
       paddingLeft: 'auto',
 
       [BREAKPOINT]: {
@@ -72,7 +82,6 @@ const useStyles = createStyles((theme) => {
       position: 'relative',
       borderRadius: theme.radius.lg - 2,
       border: '1px solid transparent',
-      padding: '42px',
       flex: 1,
 
       [BREAKPOINT]: {
@@ -80,6 +89,29 @@ const useStyles = createStyles((theme) => {
         paddingLeft: theme.spacing.md,
       },
     },
+    outer: {
+      display: 'flex',
+      flex: 3,
+      paddingTop: theme.spacing.xl,
+      paddingBottom: theme.spacing.xl,
+    },
+    description: {
+      color: theme.colors[theme.primaryColor][0],
+      maxWidth: 300,
+  
+      [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+        maxWidth: '100%',
+      },
+    },
+  
+    content: {
+      flex: 4,
+      paddingLeft: '16%',
+      [theme.fn.smallerThan('xs')]: {
+        flex: 2,
+      },
+    },
+  
 
     title: {
       marginBottom: theme.spacing.xl * 1.5,
@@ -98,18 +130,33 @@ const useStyles = createStyles((theme) => {
     },
   };
 });
-
+const social = [BrandTwitter, BrandYoutube, BrandInstagram];
 export function CardInTouch() {
   const { classes } = useStyles();
+  
+  const icons = social.map((Icon, index) => (
+    <ActionIcon key={index} size={28}  variant="transparent">
+      <Icon size={22} />
+    </ActionIcon>
+  ));
+  
 
   return (
     <Paper shadow="md" radius="lg">
       <div className={classes.wrapper}>
-        <div className={classes.contacts}>
-          <Text weight={700} className={classes.title} sx={{ color: '#fff', fontSize: '30px' }}>Do not have time? <br></br>Well call you back!
+      <div className={classes.outer}>
+          <div className={classes.content}>
+
+          <Title className={classes.title}>Contact us</Title>
+          <Text className={classes.description} mt="sm" mb={30}>
+            Leave your email and we will get back to you within 24 hours
           </Text>
 
-        </div>
+          <ContactIconsList variant="white" />
+
+          <Group mt="xl">{icons}</Group>
+
+          </div></div>
 
         <form className={classes.form} onSubmit={(event) => event.preventDefault()}>
           <Text size="lg" weight={700} className={classes.title}>
