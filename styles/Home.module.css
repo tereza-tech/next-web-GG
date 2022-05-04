@@ -2,23 +2,68 @@
   padding: 0 2rem;
 }
 
+.bgimg {
+  top: 0;
+  left: 0;
+}
+
+.heroimg2 {
+  width: 66%;
+  margin: auto;
+  filter: opacity(0.66);
+}
+
+.widehead {
+  padding-left: 0!important;
+}
+
+.miniicw {
+  width: 80px;
+  height: 80px;
+}
+
+.miniic1 {
+  width: 90px;
+  height: 90px;
+}
+
+.miniic2 {
+  width: 95px;
+  height: 95px;
+}
+
+.miniic3 {
+  width: 110px;
+  height: 110px;
+}
+
 .main {
+  overflow: hidden;
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: "url(./public/chess.png)";
 }
 
 .footer {
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  border-top: 'none';
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.heroimg {
+  width: 100%;
+  max-width: 1000px;
+  height: 380px;
+  border-top: 'none!important';
 }
 
 .footer a {
@@ -70,26 +115,33 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 1300px;
+  position: relative;
+}
+
+.pricelogos {
+  display: flex;
+  height: 120px;
 }
 
 .card {
+  display: grid;
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  border: none;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  max-width: 500px;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
   color: #0070f3;
-  border-color: #0070f3;
+  border-color: yellow;
 }
 
 .card h2 {
@@ -108,9 +160,37 @@
   margin-left: 0.5rem;
 }
 
+.sofa {
+  position: absolute;
+  width: 25%;
+  left: 76px;
+  margin-top: 1111px;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
   }
+  .grid .sofa {
+    display: none;
+  }
+}
+
+.skate {
+  position: absolute;
+  width: 15%;
+  right: 80px;
+  top: -170px;
+}
+
+.relative {
+  position: relative;
+}
+
+.hidden {
+  display: none!important;
+}
+
+.back {
 }

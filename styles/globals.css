@@ -1,8 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'WhichWay', sans-serif;
+  src: local('WhichWay'), url(./fonts/WhichWay.ttf) format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  src: local('Atkinson Hyperlegible'), url(./fonts/AtkinsonHyperlegible-Regular.ttf) format('truetype');
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: WhichWay, Atkinson Hyperlegible, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
