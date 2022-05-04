@@ -3,16 +3,17 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Image, Title, Group, ActionIcon, Button, MantineProvider , Text} from '@mantine/core'
 //import { HeaderSimple } from './headerComponent'
-import { HeaderSimple } from './headerComponent'
-import { HeroBullets } from './heroBulletsComponent'
-import { YellowBullets } from './yellowBulletsComponent'
-import { CardInTouch } from './cardInTouchComponent'
-import { RowButtons } from './rowButtons2'
-import { TwoFlexContact } from './twoFlexContactComponent'
-import { ThreeTiles } from './threeTilesComponent'
-import { Togglable } from './togglableComponent'
-import Links from './api/links.json'
-import Categories from './api/tiles.json'
+import { HeaderSimpler } from '../components/headerComponent'
+import { HeroBullets } from '../components/heroBulletsComponent'
+import { YellowBullets } from '../components/yellowBulletsComponent'
+import { CardInTouch } from '../components/cardInTouchComponent'
+import { RowButtons } from '../components/rowButtons2'
+import { TwoFlexContact } from '../components/twoFlexContactComponent'
+import { ThreeTiles } from '../components/threeTilesComponent'
+import { Togglable } from '../components/togglableComponent'
+import { TopMenu, BannerLine } from '../components/topmenuComponent'
+import Links from '../api/links.json'
+import Categories from '../api/tiles.json'
 
 const Home: NextPage = () => {
   return (
@@ -24,52 +25,66 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <BannerLine></BannerLine>
         <Togglable></Togglable>
         
-        <HeaderSimple links={Links.Links}></HeaderSimple>
-     
-        <Image className={styles.heroimg} src="/image_7.png"></Image>
-        <Image src="/chess.png"></Image>
+        <HeaderSimpler links={Links.Links}></HeaderSimpler>
+
+        <TopMenu></TopMenu>
+
+        <Image className={styles.heroimg2} src="/image_2.png"></Image>
 
         <HeroBullets></HeroBullets>
-        <YellowBullets></YellowBullets>
+        
         <MantineProvider styles={{ Text: { root: { fontFamily: 'WhichWay, sans-serif' } } }}>
     </MantineProvider>
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
         <div className={styles.grid}>
           
           <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
+          <div className={styles.pricelogos}>
+          <Image className={styles.miniic2} src="/van.png"></Image>
+          <Image className={styles.miniic1} src="/worker_1.png"></Image>
+          </div>
+            <h2>Auto + 1 &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
+          <div className={styles.pricelogos}>
+          <Image className={styles.miniic2} src="/van.png"></Image>
+          <Image className={styles.miniic1} src="/worker_1.png"></Image>
+          <Image className={styles.miniic1} src="/worker_2.png"></Image></div>
+            <h2>Auto + 2 &rarr;</h2>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
 
           <a
             href="https://github.com/vercel/next.js/tree/canary/examples"
             className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
+          ><div className={styles.pricelogos}><Image className={styles.miniic3} src="/box-truck.png"></Image>
+          <Image className={styles.miniic1} src="/worker_3.png"></Image>
+          <Image className={styles.miniic1} src="/worker_1.png"></Image>
+          
+          <Image className={styles.miniic1} src="/worker_2.png"></Image>
+          </div>
+            <h2>Auto + 3 &rarr;</h2>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
 
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
+          ><div className={styles.pricelogos}></div>
+            <h2>Více &rarr;</h2>
             <p>
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
         </div>
+        <YellowBullets></YellowBullets>
+        
         <CardInTouch></CardInTouch>
+        <Image className={styles.heroimg} src="/image_7.png"></Image>
         <TwoFlexContact></TwoFlexContact>
       </main>
       <footer className={styles.footer}>
