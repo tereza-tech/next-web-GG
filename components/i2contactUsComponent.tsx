@@ -13,12 +13,13 @@ import {
 import { BrandTwitter, BrandYoutube, BrandInstagram } from 'tabler-icons-react';
 import { ContactIconsList } from './ContactIcons/ContactIcons';
 
+
 const useStyles = createStyles((theme) => ({
   root: {
    
   },
   wrapper: {
-    width: '61%',
+    width: '70%',
     backgroundColor: '#141517',
     borderRadius: '16px',
     minHeight: 400,
@@ -26,8 +27,8 @@ const useStyles = createStyles((theme) => ({
     backgroundImage: `linear-gradient(-60deg, ${theme.colors[theme.primaryColor][4]} 0%, ${
       theme.colors[theme.primaryColor][7]
     } 100%)`,
-    padding: theme.spacing.xl * 2.5,
-
+    padding: 39,
+    marginTop: 40,
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
       padding: theme.spacing.xl * 1.5,
     },
