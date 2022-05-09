@@ -27,7 +27,7 @@ export function Logo() {
 
 export function GiraffeLogo() {
   return (
-    <div style={{ width: 148, paddingTop: 15, paddingLeft: 15}}>
+    <div style={{ width: 148, paddingTop: 15, paddingLeft: 17}}>
       <Image
         radius="md"
         src="/Giraffe_logo.png"

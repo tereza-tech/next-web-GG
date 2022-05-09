@@ -21,7 +21,7 @@ const useStyles = createStyles((theme) => {
   return {
     wrapper: {
       display: 'flex',
-      marginTop: theme.spacing.xl * 2,
+      marginTop: 0,
       width: '118%',
       position: 'relative',
       left: '-3%',
