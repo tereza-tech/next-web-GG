@@ -7,7 +7,7 @@ import { HeaderSimpler } from '../components/i2headerComponent'
 //import { HeroBullets } from '../components/heroBulletsComponent'
 import { HeroImageRight } from '../components/i2HeroRightComponent'
 import { HeroBullets } from '../components/i2HeroBulletsComonent'
-import { StatsGroup } from '../components/i2statsGroupComponent'
+import { StatsGroup, UserInfoIcons } from '../components/i2statsGroupComponent'
 import { CardInTouch } from '../components/cardInTouchComponent'
 import { RowButtons } from '../components/rowButtons2'
 import { TwoFlexContact } from '../components/twoFlexContactComponent'
@@ -18,8 +18,9 @@ import { FeaturesAsymmetrical } from '../components/i2featBlocksComponent'
 import { Togglable } from '../components/togglableComponent'
 import { TopMenu, BannerLine } from '../components/topmenuComponent'
 import Links from '../api/links.json'
-import  Grid_data  from '../api/grid.json'
+import Grid_data from '../api/grid.json'
 import stats from '../api/stats.json'
+import authors from '../api/authors.json'
 import { ContactUs } from '../components/i2contactUsComponent'
 
 const Home: NextPage = () => {
@@ -51,7 +52,8 @@ const Home: NextPage = () => {
             </Title>
         <GridofThree data={Grid_data.Grid_data}></GridofThree>
         <StatsGroup data={stats.data}></StatsGroup>
-        <ContactUs></ContactUs>
+        
+        <ContactUs></ContactUs><UserInfoIcons data={authors.data}></UserInfoIcons>
         <FaqWithImage></FaqWithImage>
       
       </main>
