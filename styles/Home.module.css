@@ -1,5 +1,5 @@
 .container {
-  padding: 0 2rem;
+  padding: 0 0rem;
 }
 
 .bgimg {
@@ -46,7 +46,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: "url(./public/chess.png)";
+  background: #101010;
 }
 
 .footer {
@@ -202,4 +202,17 @@
 }
 
 .back {
+}
+
+.title2 {
+  color: white;
+  font-size: 25px;
+  line-height: 1.2px;
+  font-weight: 100;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  align-self: start;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
