@@ -9,7 +9,7 @@ import image from '../public/chess.png';
 
 const useStyles = createStyles((theme) => ({
   root: {
-    maxWidth: '70%',
+    maxWidth: '100%',
   },
   header: {
     display: 'flex',
@@ -18,6 +18,7 @@ const useStyles = createStyles((theme) => ({
     width: '100%',
     alignItems: 'flex-start',
     paddingLeft: '0',
+    maxWidth: 1060,
   },
 
   lefter: {

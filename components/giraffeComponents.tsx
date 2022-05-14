@@ -44,23 +44,18 @@ export function SocialIcons() {
     <div className={classes.iconboard}>
       <Image
         className={classes.socimage}
-        src="/icons/instagram.svg"
-        alt="Which Way logo"
+        src="/icons/instag.png"
+        alt="Instagram"
       />
       <Image
         className={classes.socimage}
-        src="/icons/messenger.svg"
-        alt="Which Way logo"
+        src="/icons/facebook.png"
+        alt="Facebook"
       />
       <Image
         className={classes.socimage}
-        src="/icons/whatsapp.svg"
-        alt="Which Way logo"
-      />
-      <Image
-        className={classes.socimage}
-        src="/icons/google.svg"
-        alt="Which Way logo"
+        src="/icons/f5.png"
+        alt="Facebook"
       />
     </div>
   );

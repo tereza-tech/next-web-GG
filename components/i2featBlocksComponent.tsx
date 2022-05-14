@@ -22,7 +22,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   icon: {
-    color: theme.colors[theme.primaryColor][theme.colorScheme === 'dark' ? 4 : 6],
+    color: theme.colors['dark'][7],
   },
 
   icon2: {
@@ -55,7 +55,7 @@ function Feature({ icon: Icon, title, description, className, ...others }: Featu
         size={44}
         radius="md"
         variant="gradient"
-        gradient={{ deg: 133, from: 'orange', to: 'yellow' }}
+        gradient={{ deg: 133, from: '#fede00', to: 'yellow' }}
       >
         <Icon size={36} className={classes.icon}  />
       </ThemeIcon>
