@@ -28,14 +28,14 @@ const useStyles = createStyles((theme) => ({
     overflow: 'hidden',
     marginTop: theme.spacing.xl,
     paddingLeft: theme.spacing.xl * 3,
-    marginBottom: theme.spacing.xl * 2,
+    marginBottom: theme.spacing.xl,
     height: 490,
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
       borderRadius: theme.radius.lg,
   },
 
   content: {
-    maxWidth: 420,
+    maxWidth: '100%',
     marginRight: theme.spacing.sm,
 
     [theme.fn.smallerThan('md')]: {
@@ -78,7 +78,7 @@ const useStyles = createStyles((theme) => ({
     paddingLeft: 68,
   },
   image: {
-   width: '40%',
+   width: '0%',
    height: 'auto',
    float: 'right',
     [theme.fn.smallerThan('md')]: {
@@ -86,7 +86,7 @@ const useStyles = createStyles((theme) => ({
     },
   },
   image2: {
-    width: '448px',
+    width: '0px',
     height: 'auto',
     position: 'absolute',
     bottom: '70px',
@@ -251,17 +251,7 @@ export function HeroBullets() {
             </Group>
           </div>
          
-          <div className={classes.twoImages}>
-            
-          <Container className={classes.wrapper} size="lg">
-            <div className={classes.header}>
-            <FeaturesAsymmetrical2></FeaturesAsymmetrical2>
-            </div>
-            <div className={classes.header2}>
-            </div>
-            </Container>
-
-        </div>
+       
         </div>
       </Container>
   );

@@ -17,6 +17,7 @@ import { FaqWithImage } from '../components/faqWithImageComponent'
 import { FeaturesAsymmetrical } from '../components/i2featBlocksComponent'
 import { Togglable } from '../components/togglableComponent'
 import { TopMenu, BannerLine } from '../components/topmenuComponent'
+import { LeadGrid } from '../components/i2ColsComponent'
 import Links from '../api/links.json'
 import Grid_data from '../api/grid.json'
 import stats from '../api/stats.json'
@@ -38,10 +39,9 @@ const Home: NextPage = () => {
       <HeroImageRight></HeroImageRight>
         <Togglable></Togglable>
         
-
         <TopMenu></TopMenu>
         <HeroBullets></HeroBullets>
-
+        <LeadGrid></LeadGrid>
 
         <MantineProvider styles={{ Text: { root: { fontFamily: 'WhichWay, sans-serif' } } }}>
     </MantineProvider>
@@ -53,7 +53,6 @@ const Home: NextPage = () => {
         <GridofThree data={Grid_data.Grid_data}></GridofThree>
         <StatsGroup data={stats.data}></StatsGroup>
         
-        <ContactUs></ContactUs><UserInfoIcons data={authors.data}></UserInfoIcons>
         <FaqWithImage></FaqWithImage>
       
       </main>

@@ -20,6 +20,7 @@ const useStyles = createStyles((theme) => ({
 
 
   inner: {
+    height: 400,
       width: '133%',
     display: 'flex',
     justifyContent: 'space-between',
@@ -101,33 +102,8 @@ export function HeroImageRight() {
       <Container size="lg">
         <div className={classes.inner}>
           <div className={classes.content}>
-            <Title className={classes.title}>
-              A{' '}
-              <Text
-                component="span"
-                inherit
-                variant="gradient"
-                gradient={{ from: 'yellow', to: '#fede00' }}
-              >
-                fully featured
-              </Text>{' '}
-              React components library
-            </Title>
+            <h3>Stěhujeme</h3>
 
-            <Text className={classes.description} mt={30}>
-              Build fully functional accessible web applications with ease – Mantine includes more
-              than 100 customizable components and hooks to cover you in any situation
-            </Text>
-
-            <Button
-              variant="gradient"
-              gradient={{ from: 'yellow', to: '#fede00' }}
-              size="md"
-              className={classes.control}
-              mt={40}
-            >
-              Get started
-            </Button>
           </div>
         </div>
       </Container>
