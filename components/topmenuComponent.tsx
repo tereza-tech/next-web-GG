@@ -19,7 +19,7 @@ export function YellowButton(props: ButtonProps<'button'>) {
         backgroundColor: theme.colors.yellow[4],
         color: 'white',
         height: 50,
-        width: '123px',
+        width: '140px',
         fontFamily: 'WhichWay',
         fontSize: '9px',
         fontWeight: '100',
@@ -32,7 +32,7 @@ export function YellowButton(props: ButtonProps<'button'>) {
 
 // Twitter button as anchor
 export function GreyAnchorButton(props: ButtonProps<'a'>) {
-  return <Button component="a" variant="default" sx={{ width: '110px', padding: 4, fontSize: '16px', paddingTop: 0 }} {...props} />;
+  return <Button component="a" variant="default" sx={{ width: '145px', padding: 4, fontSize: '16px', paddingTop: 0, height: '39px' }} {...props} />;
 }
 
 export function RowButtons() {
@@ -57,7 +57,7 @@ export function BannerLine() {
 
 export function TopMenu() {
   return (
-    <Group position="center" sx={{ width: '66%', padding: 15, paddingTop: 8, backgroundColor: '#2d2d2d', gap: 9 }}>
+    <Group position="center" sx={{ width: '100%', padding: 15, paddingTop: 8, gap: 9 }}>
       <GreyAnchorButton>
         O nás
       </GreyAnchorButton>
