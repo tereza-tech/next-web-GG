@@ -11,7 +11,7 @@
   "dependencies": {
     "@mantine/core": "^4.1.4",
     "@mantine/hooks": "^4.1.4",
-    "@mantine/next": "^4.1.4",
+    "@mantine/next": "^4.1.5",
     "next": "12.1.5",
     "react": "18.0.0",
     "react-dom": "18.0.0",
