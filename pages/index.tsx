@@ -4,12 +4,13 @@ import styles from '../styles/Home.module.css'
 import { Image, Title, Group, ActionIcon, Button, MantineProvider , Text} from '@mantine/core'
 //import { HeaderSimple } from './headerComponent'
 import { HeaderSimpler } from '../components/i2headerComponent'
-//import { HeroBullets } from '../components/heroBulletsComponent'
+import { HeroBullets2 } from '../components/heroBulletsComponent'
 import { HeroImageRight } from '../components/i2HeroRightComponent'
 import { HeroBullets } from '../components/i2HeroBulletsComonent'
 import { StatsGroup, UserInfoIcons } from '../components/i2statsGroupComponent'
 import { CardInTouch } from '../components/cardInTouchComponent'
 import { RowButtons } from '../components/rowButtons2'
+//import { CardInTouch } from '../components/cardInTouchComponent'
 import { TwoFlexContact } from '../components/twoFlexContactComponent'
 import { ThreeTiles } from '../components/threeTilesComponent'
 import { GridofThree } from '../components/gridComponent'
@@ -35,22 +36,18 @@ const Home: NextPage = () => {
       </Head>
       <main className={styles.main}>
         <HeaderSimpler links={Links.Links}></HeaderSimpler>
-      
       <HeroImageRight></HeroImageRight>
         <Togglable></Togglable>
         
         <TopMenu></TopMenu>
         <HeroBullets></HeroBullets>
-        <LeadGrid></LeadGrid>
 
-        <MantineProvider styles={{ Text: { root: { fontFamily: 'WhichWay, sans-serif' } } }}>
-    </MantineProvider>
-    <FeaturesAsymmetrical></FeaturesAsymmetrical>
-    <Title className={styles.title2}>
-              
-              Ceník
-            </Title>
-        <GridofThree data={Grid_data.Grid_data}></GridofThree>
+<Title style={{width:'59%', color: '#fede00', fontSize: 26}}>Ceník</Title>
+    <FeaturesAsymmetrical></FeaturesAsymmetrical>   
+    <Title style={{width:'59%', color: '#fede00', fontSize: 26}}>Služby</Title>
+    <HeroBullets2></HeroBullets2>
+    <Title style={{width:'59%', color: '#fede00', fontSize: 26}}>Poptávka</Title>
+    <CardInTouch></CardInTouch>
         <StatsGroup data={stats.data}></StatsGroup>
         
         <FaqWithImage></FaqWithImage>

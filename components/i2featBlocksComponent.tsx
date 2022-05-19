@@ -1,6 +1,8 @@
 import React from 'react';
-import { createStyles, Text, SimpleGrid, Container, ThemeIcon } from '@mantine/core';
+import { createStyles, Text, SimpleGrid, Container, ThemeIcon, Image } from '@mantine/core';
 import { Truck, Certificate, Coin } from 'tabler-icons-react';
+import car from '../public/van.png';
+import guy from '../public/icons/man.png';
 
 const useStyles = createStyles((theme) => ({
 
@@ -136,8 +138,18 @@ export function FeaturesAsymmetrical() {
 
   return (
     <Container mt={22} mb={50} size="lg">
-      <SimpleGrid ml={20} cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]} spacing={50}>
-        {items}
+      <SimpleGrid ml={20} cols={6} breakpoints={[{ maxWidth: 'sm', cols: 1 }]} spacing={50}>
+        <Container><Image alt="car" src={car.src} style={{width: '210%', paddingTop:65, paddingLeft: 70}}></Image></Container>
+        <Container style={{width:120}}></Container>
+        <Container style={{display:'block ruby'}}>
+        <div><Image style={{width:64, height:64, padding: 0, marginLeft: '-25px'}} alt="car" src={guy.src}></Image></div>
+        <div><Image style={{width:64, height:64, padding: 0, marginLeft: '-25px'}} alt="car" src={guy.src}></Image><Image style={{width:64, height:64, padding: 0, marginLeft: '-25px', marginTop: 30}} alt="car" src={guy.src}></Image></div>
+        <div><Image style={{width:64, height:64, padding: 0, marginLeft: '-25px'}} alt="car" src={guy.src}></Image><Image style={{width:64, height:64, padding: 0, marginLeft: '-25px', marginTop: 30}} alt="car" src={guy.src}></Image><Image style={{width:64, height:64, padding: 0, marginLeft: '-25px', marginTop: 30}} alt="car" src={guy.src}></Image></div>
+        
+          </Container>
+        <Container style={{color: '#fede00', fontSize:36, display: 'flex', flexFlow: 'column', justifyContent: 'space-between', height: '94%', position: 'relative' }}><div>-</div><div>-</div><div>-</div></Container>
+        <Container style={{color: '#fede00', fontSize:36, display: 'flex', flexFlow: 'column', justifyContent: 'space-between', height: '94%', position: 'relative' }}><div style={{textAlign: 'right'}}>900,-</div><div style={{textAlign: 'right'}}>1200,-</div><div style={{textAlign: 'right'}}>1500,-</div></Container>
+     
       </SimpleGrid>
     </Container>
   );

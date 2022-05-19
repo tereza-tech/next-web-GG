@@ -11,8 +11,7 @@ const useStyles = createStyles((theme) => ({
     backgroundColor: '#11284b',
     backgroundSize: 'contain',
     backgroundPosition: 'right',
-    backgroundImage: `linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #101010 70%),url(${image.src})`,
-    borderRadius: 16,
+    backgroundImage: `url(${image.src})`,
     paddingTop: 30,
     paddingBottom: 0,
     marginTop: 30,
@@ -102,7 +101,6 @@ export function HeroImageRight() {
       <Container size="lg">
         <div className={classes.inner}>
           <div className={classes.content}>
-            <h3>Stěhujeme</h3>
 
           </div>
         </div>

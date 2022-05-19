@@ -38,7 +38,7 @@ export function GreyAnchorButton(props: ButtonProps<'a'>) {
 export function RowButtons() {
   return (
     <Group position="center" sx={{ padding: 18 }}>
-      <YellowButton>Naše Služby</YellowButton>
+      <YellowButton sx={{ background: 'yellow' }}>Naše Služby</YellowButton>
       <YellowButton>Ceník</YellowButton>
       <YellowButton>Reference</YellowButton>
       <YellowButton>O firmě</YellowButton>
@@ -58,25 +58,17 @@ export function BannerLine() {
 export function TopMenu() {
   return (
     <Group position="center" sx={{ width: '100%', padding: 15, paddingTop: 8, gap: 9 }}>
-      <GreyAnchorButton>
+      <GreyAnchorButton  sx={{ background: '#fcdc00', width: 265, fontFamily: 'WhichWay', color: 'black', fontSize: 15, paddingRight: 5, paddingLeft: 5 }}>
         O nás
       </GreyAnchorButton>
-      <GreyAnchorButton>
+      <GreyAnchorButton  sx={{ background: '#fcdc00', width: 265, fontFamily: 'WhichWay', color: 'black', fontSize: 15, paddingRight: 5, paddingLeft: 5 }}>
         Ceník
       </GreyAnchorButton>
-      <GreyAnchorButton>
+      <GreyAnchorButton  sx={{ background: '#fcdc00', width: 265, fontFamily: 'WhichWay', color: 'black', fontSize: 15, paddingRight: 5, paddingLeft: 5 }}>
         Služby
       </GreyAnchorButton>
-      <GreyAnchorButton>
-        Galerie
-      </GreyAnchorButton>
-      <GreyAnchorButton>
-        Reference
-      </GreyAnchorButton>
-      <GreyAnchorButton>
-        Kontakt
-      </GreyAnchorButton>
-      <GreyAnchorButton>
+    
+      <GreyAnchorButton  sx={{ background: '#fcdc00', width: 265, fontFamily: 'WhichWay', color: 'black', fontSize: 15, paddingRight: 5, paddingLeft: 5 }}>
         Poptávka
       </GreyAnchorButton>
     </Group>

@@ -18,15 +18,14 @@ const useStyles = createStyles((theme) => ({
   inner: {
     display: 'flex',
     justifyContent: 'space-between',
-    width: '105%',
+    width: '145%',
     position: 'relative',
-    left: '-2.5%',
-    marginTop: theme.spacing.xl,
+    left: '-40%',
+    marginTop: theme.spacing.md,
     paddingLeft: theme.spacing.xl * 3,
     marginBottom: theme.spacing.xl * 2,
     height: 500,
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
-      borderRadius: theme.radius.lg,
+    color: '#fede00'
   },
 
   content: {
@@ -37,10 +36,10 @@ const useStyles = createStyles((theme) => ({
       maxWidth: '100%',
       marginRight: 0,
     },
+    color: '#fede00'
   },
 
   title: {
-    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
     fontFamily: `WhichWay, ${theme.fontFamily}`,
     fontSize: 25,
     lineHeight: 1.2,
@@ -56,6 +55,7 @@ const useStyles = createStyles((theme) => ({
     [theme.fn.smallerThan('xs')]: {
       flex: 2,
     },
+    color: '#fede00'
   },
 
   controlwh: {
@@ -113,26 +113,19 @@ opacity: '0.85',
         : theme.colors[theme.primaryColor][0],
     borderRadius: theme.radius.sm,
     padding: '4px 12px',
+    color: '#fede00'
   },
 }));
 
-export function HeroBullets() {
+export function HeroBullets2() {
   const { classes } = useStyles();
   return (
       <Container>
         <div className={classes.inner}>
           <div className={classes.content}>
-            <Title className={classes.title}>
-              
-              Stěhujeme
-            </Title>
-            <Text color="dimmed" mt="md">
-              <br />
-              Build fully functional accessible web applications faster than ever – Mantine includes
-              more than 120 customizable components and hooks to cover you in any situation
-            </Text>
 <div className={classes.colum}>
             <List
+            style={{color:'#fff'}}
               mt={30}
               spacing="sm"
               size="sm"
@@ -156,6 +149,7 @@ export function HeroBullets() {
               </List.Item>
             </List>
             <List
+            style={{color:'#fff'}}
               mt={30}
               spacing="sm"
               size="sm"
@@ -180,19 +174,10 @@ export function HeroBullets() {
               </List.Item>
             </List>
             </div>
-            <Group mt={30}>
-              <Button radius="xl" size="md" className={classes.controlwh}>
-                Více
-              </Button>
-              <Button variant="default" radius="xl" size="md" className={classes.control}>
-               Ceník
-              </Button>
-            </Group>
           </div>
          
           <div className={classes.twoImages}>
-          <Image src={image.src} className={classes.image} />
-            <Image id="mover" src={image2.src} className={classes.image2}/>
+        
         </div>
 
         </div>

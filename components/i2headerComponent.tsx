@@ -4,7 +4,8 @@ import { FacebookIcon } from './socialIcons';
 import { useBooleanToggle } from '@mantine/hooks';
 import { Logo, GiraffeLogo, SocialIcons } from './giraffeComponents';
 import image2 from '../public/abstract.jpg';
-import image from '../public/chess.png';
+import phone from '../public/icons/phone.png';
+import mail from '../public/icons/email.png';
 
 
 const useStyles = createStyles((theme) => ({
@@ -28,10 +29,25 @@ const useStyles = createStyles((theme) => ({
   },
 
   numbers: {    
-    marginLeft: 35,
+    marginLeft: 75,
     paddingTop: 45,
-    fontSize: 17,
+    fontSize: 16,
+    fontFamily: 'WhichWay',
+    color: '#fede00',
   },
+
+  ctext: {
+display: 'inline-block',
+
+  },
+
+clogo: {
+  display: 'inline-block',
+  width: 45,
+  height: 45,
+  marginBottom: 1,
+  marginRight: 16
+},
 
   phonen: {
     marginTop: 0,
@@ -145,7 +161,7 @@ export function HeaderSimpler({ links }: HeaderSimpleProps) {
 
   return (
       <Container className={classes.header}>
-        <span className={classes.lefter}><Logo></Logo><span className={classes.numbers}><h3 className={classes.phonen}>+420 777 253 732</h3><h3 className={classes.phonen}>+420 777 253 732</h3></span></span>
+        <span className={classes.lefter}><Logo></Logo><span className={classes.numbers}><Image className={classes.clogo} alt="phone" src={phone.src}></Image><span className={classes.ctext}><h3 className={classes.phonen}>+420 777 032 765</h3><h3 className={classes.phonen}>+420 777 032 763</h3></span></span><span className={classes.numbers}><Image className={classes.clogo} alt="phone" src={mail.src}></Image><span className={classes.phonen}>info@2ww.cz</span></span></span>
         <SocialIcons></SocialIcons>
         <GiraffeLogo></GiraffeLogo>
       </Container>

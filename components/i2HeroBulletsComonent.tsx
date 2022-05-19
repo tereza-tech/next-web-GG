@@ -16,10 +16,18 @@ import image2 from '../public/image_8.jpeg';
 import { FeaturesAsymmetrical2 } from '../components/i2featBlocksComponent'
 
 const useStyles = createStyles((theme) => ({
-    root: {
+
+    border: {
+      borderBottom: '3px solid #fcdc00',
+      width: '114%',
+      maxWidth: '114%',
+      position: 'relative',
+left: '-6%',
+marginBottom: 60
     },
   inner: {
     maxWidth: 1060,
+    
     width: 1060,
     display: 'flex',
     justifyContent: 'space-between',
@@ -29,7 +37,8 @@ const useStyles = createStyles((theme) => ({
     marginTop: theme.spacing.xl,
     paddingLeft: theme.spacing.xl * 3,
     marginBottom: theme.spacing.xl,
-    height: 490,
+    height: 300,
+    paddingRight: theme.spacing.xl * 3,
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
       borderRadius: theme.radius.lg,
   },
@@ -45,11 +54,11 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
-    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
     fontFamily: `WhichWay, ${theme.fontFamily}`,
     fontSize: 25,
     lineHeight: 1.2,
     fontWeight: 100,
+    color: '#fcdc00',
     marginTop: 50,
     [theme.fn.smallerThan('xs')]: {
       fontSize: 28,
@@ -179,20 +188,25 @@ const useStyles = createStyles((theme) => ({
 export function HeroBullets() {
   const { classes } = useStyles();
   return (
+    <Container>
       <Container>
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title className={classes.title}>
               
-              Stěhujeme
+              O nás
             </Title>
-            <Text color="dimmed" mt="md">
+            <Text color="#FFF" mt="md">
               <br />
-              Build fully functional accessible web applications faster than ever – Mantine includes
-              more than 120 customizable components and hooks to cover you in any situation
+              Quisque tincidunt scelerisque libero. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat. Sed ac dolor sit amet purus malesuada congue. Duis risus.
+
+Aenean fermentum risus id tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. In convallis. Etiam dictum tincidunt diam. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Etiam egestas wisi a erat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             </Text>
 <div className={classes.colum}>
-            <List
+  <div  style={{ width: '90%', display: 'flex' }}><span style={{ width:150 }}>
+      </span>
+  </div>
+            <List style={{ display: 'none' }}
               mt={48}
               spacing="sm"
               size="md"
@@ -216,6 +230,7 @@ export function HeroBullets() {
               </List.Item>
             </List>
             <List
+            style={{ display: 'none' }}
               mt={48}
               mb={1}
               spacing="sm"
@@ -241,19 +256,13 @@ export function HeroBullets() {
               </List.Item>
             </List>
             </div>
-            <Group mt={40}>
-              <Button radius="xl" size="md" className={classes.controlwh}>
-                Více
-              </Button>
-              <Button variant="default" radius="xl" size="md" className={classes.control}>
-               Ceník
-              </Button>
-            </Group>
+            
           </div>
          
        
         </div>
       </Container>
+      <Container  className={classes.border}></Container></Container>
   );
 }
 /*
