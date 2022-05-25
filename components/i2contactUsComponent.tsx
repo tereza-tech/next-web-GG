@@ -10,15 +10,30 @@ import {
   Group,
   ActionIcon,
 } from '@mantine/core';
+import { useForm } from '@mantine/form';
 import { BrandTwitter, BrandYoutube, BrandInstagram } from 'tabler-icons-react';
 import { ContactIconsList } from './ContactIcons/ContactIcons';
+import { mockSubmit, FormData } from '../api/airtable';
+
+let form: FormData = {
+  "email": '',
+  "name": '',
+  "message": '',
+  "phone": '',
+  "callback": ''
+}
+
+interface BothContacts extends FormData {
+  mailaphone: void;
+}
+ 
 
 const useStyles = createStyles((theme) => ({
   root: {
    
   },
   wrapper: {
-    width: '61%',
+    width: '100%',
     backgroundColor: '#141517',
     borderRadius: '16px',
     minHeight: 400,
@@ -90,6 +105,22 @@ const social = [BrandTwitter, BrandYoutube, BrandInstagram];
 export function ContactUs() {
   const { classes } = useStyles();
 
+  function Demo() {
+    const form = useForm<FormData>({
+      initialValues: {
+        email: '',
+        name: '',
+        message: '',
+        phone: '',
+        callback: ''
+      },
+      validate: {
+        name: (value) => (value.length < 4 ? 'Prosím uveďte Vaše jméno.' : null),
+        message: (value) => (value.length < 2 ? 'Prosíme vyplňte text zprávy.' : null),
+      },
+    });
+  }
+
   const icons = social.map((Icon, index) => (
     <ActionIcon key={index} size={28} className={classes.social} variant="transparent">
       <Icon size={22} />
@@ -109,7 +140,8 @@ export function ContactUs() {
 
           <Group mt="xl">{icons}</Group>
         </div>
-        <form className={classes.form} onSubmit={(event) => event.preventDefault()}>
+        <form>
+       {/* <form className={classes.form} onSubmit={form.onSubmit((values) => console.log(values))}>*/}
           <Text size="lg" weight={700} className={classes.title}>
             Leave the info
           </Text>

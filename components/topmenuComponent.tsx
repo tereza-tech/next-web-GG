@@ -19,7 +19,7 @@ export function YellowButton(props: ButtonProps<'button'>) {
         backgroundColor: theme.colors.yellow[4],
         color: 'white',
         height: 50,
-        width: '140px',
+        width: '110px',
         fontFamily: 'WhichWay',
         fontSize: '9px',
         fontWeight: '100',
@@ -32,7 +32,7 @@ export function YellowButton(props: ButtonProps<'button'>) {
 
 // Twitter button as anchor
 export function GreyAnchorButton(props: ButtonProps<'a'>) {
-  return <Button component="a" variant="default" sx={{ width: '145px', padding: 4, fontSize: '16px', paddingTop: 0, height: '39px' }} {...props} />;
+  return <Button component="a" variant="default" sx={{ width: '13.15%', padding: 4, fontSize: '16px', paddingTop: 0, height: '39px', backgroundColor: '#fede00', color: 'black', fontFamily: 'WhichWay' }} {...props} />;
 }
 
 export function RowButtons() {
@@ -40,7 +40,6 @@ export function RowButtons() {
     <Group position="center" sx={{ padding: 18 }}>
       <YellowButton>Naše Služby</YellowButton>
       <YellowButton>Ceník</YellowButton>
-      <YellowButton>Reference</YellowButton>
       <YellowButton>O firmě</YellowButton>
       <YellowButton>Kontakty</YellowButton>
     </Group>
@@ -69,12 +68,6 @@ export function TopMenu() {
       </GreyAnchorButton>
       <GreyAnchorButton>
         Galerie
-      </GreyAnchorButton>
-      <GreyAnchorButton>
-        Reference
-      </GreyAnchorButton>
-      <GreyAnchorButton>
-        Kontakt
       </GreyAnchorButton>
       <GreyAnchorButton>
         Poptávka
