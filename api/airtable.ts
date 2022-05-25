@@ -5,6 +5,10 @@ type Data = {
   name: string
 }
 
+export interface AnyContact {
+  contact: String;
+}
+
 export interface FormData {
     email: String;
     name: String;
@@ -22,7 +26,7 @@ let test:FormData = {
     "name": 'Tereza',
     "message": 'Zpráva',
     "phone": '777253732',
-    "callback": '15-17'
+    "callback": '15-17',
 }
 
 export function mockSubmit() {

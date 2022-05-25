@@ -13,15 +13,16 @@ import {
 import { useForm } from '@mantine/form';
 import { BrandTwitter, BrandYoutube, BrandInstagram } from 'tabler-icons-react';
 import { ContactIconsList } from './ContactIcons/ContactIcons';
-import { mockSubmit, FormData } from '../api/airtable';
+import { mockSubmit, FormData, formSubmit } from '../api/airtable';
 
-let form: FormData = {
+
+/*let form: FormData = {
   "email": '',
   "name": '',
   "message": '',
   "phone": '',
-  "callback": ''
-}
+  "callback": '',
+}*/
 
 interface BothContacts extends FormData {
   mailaphone: void;
@@ -106,7 +107,7 @@ const social = [BrandTwitter, BrandYoutube, BrandInstagram];
 export function ContactUs() {
   const { classes } = useStyles();
 
-  function Demo() {
+
     const form = useForm<FormData>({
       initialValues: {
         email: '',
@@ -120,7 +121,8 @@ export function ContactUs() {
         message: (value) => (value.length < 2 ? 'Prosíme vyplňte text zprávy.' : null),
       },
     });
-  }
+
+    
 
   const icons = social.map((Icon, index) => (
     <ActionIcon key={index} size={28} className={classes.social} variant="transparent">
@@ -143,23 +145,24 @@ export function ContactUs() {
           <br /><br />
           <br /><br />          <Title style={{color: '#fede00'}} order={4}>Which Way? This Way!</Title>
         </div>
-        <form>
+        <form onSubmit={form.onSubmit((values) => {console.log(values)})}>
        {/* <form className={classes.form} onSubmit={form.onSubmit((values) => console.log(values))}>*/}
         
 
           <div className={classes.fields}>
             <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-              <TextInput label="Celé jméno" placeholder="Jmeéno Příjmenní" />
-              <TextInput label="Telefonní číslo" placeholder="+420 " required />
+              <TextInput label="Celé jméno" placeholder="Jmeéno Příjmenní" {...form.getInputProps('name')} />
+              <TextInput label="Telefonní číslo" placeholder="+420 " required {...form.getInputProps('phone')} />
             </SimpleGrid>
-            <TextInput mt="md" label="E-mail" placeholder="" required />
-            <TextInput mt="md" label="Máte preferovaný čas, kdy Vás kontaktovat?" placeholder="" />
+            <TextInput mt="md" label="E-mail" placeholder="" required {...form.getInputProps('email')} />
+            <TextInput mt="md" label="Máte preferovaný čas, kdy Vás kontaktovat?" placeholder="" {...form.getInputProps('callback')} />
 <Textarea
               mt="md"
               label="Prosíme specifikujte zde vaše požadavky:"
               placeholder=""
               minRows={3}
               required
+              {...form.getInputProps('message')}
             />
             <Group position="right" mt="md">
               <Button type="submit" className={classes.control}>
