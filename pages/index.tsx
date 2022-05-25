@@ -7,6 +7,7 @@ import {Link} from 'react-scroll'
 import { ContactUs } from '../components/i2contactUsComponent'
 import Phone from '../public/phone.png'
 import Mail from '../public/email.png'
+import { BorderAll } from 'tabler-icons-react'
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -34,38 +35,26 @@ const useStyles = createStyles((theme) => ({
     backgroundColor: '#fede00',
     fontFamily: 'WhichWay',
     color: 'black',
-    fontSize: '1.5vw'
+    borderRadius: '8px',
+    fontSize: '17px',
+    width: '100%'
   },
   ybutton2: {
     position: 'relative',
-    top: -3,
+    top: -6,
     backgroundColor: '#fede00',
-    fontFamily: 'WhichWay',
     color: 'black',
-    height: 17,
-    border: '1px solid black',
-    width: ' 50%',
-    fontSize: '1.2vw',
-    borderRadius: 0
-  },
-  ybutton3: {
-    position: 'relative',
-    top: -9,
-    backgroundColor: '#fede00',
-    fontFamily: 'WhichWay',
-    color: 'black',
-    height: 17,
-    width: '33%',
-    border: '1px solid black',
-    fontSize: '1.2vw',
-    borderRadius: 0
+    height: 27,
+    borderRadius: 4,
+    margin: '0 1.35px',
+    width: '19.5%',
+
   },
 
-  newBtns: {
-    backgroundColor: '#fede00',
-    color: 'black',
-    borderRadius: 10,
-  },
+  linkbtn: {
+
+    width: '29%'
+  }
   
 }))
 
@@ -179,8 +168,8 @@ const Home: NextPage = () => {
                   <Group style={{ fontFamily: 'WhichWay', color: '#fede00' }}>
                     <Image src={Phone.src} className={classes.icony1}></Image>
                     <Stack spacing="xs">
-                      <Title order={5} style={{ color: '#fede00' }}>+420 777 253 752</Title>
-                      <Title order={5} style={{ color: '#fede00' }}>+420 777 253 752</Title>
+                      <Title order={5} style={{ color: '#fede00' }}>+420 777 032 783</Title>
+                      <Title order={5} style={{ color: '#fede00' }}>+420 777 032 763</Title>
                     </Stack>
                   </Group>
                   <Space w="xs" />
@@ -202,8 +191,8 @@ const Home: NextPage = () => {
               <Group style={{ fontFamily: 'WhichWay', color: '#fede00' }}>
                 <Image src={Phone.src} className={classes.icony1} style={{ width: '6.5vw' }}></Image>
                 <Stack spacing="xs">
-                  <Title order={5} style={{ color: '#fede00', fontSize: '2.34vw' }}>+420 777 253 752</Title>
-                  <Title order={5} style={{ color: '#fede00', fontSize: '2.35vw' }}>+420 777 253 752</Title>
+                  <Title order={5} style={{ color: '#fede00', fontSize: '2.34vw' }}>+420 777 032 783</Title>
+                  <Title order={5} style={{ color: '#fede00', fontSize: '2.35vw' }}>+420 777 032 763</Title>
                 </Stack>
               </Group>
               <Space w="xs" />
@@ -219,39 +208,31 @@ const Home: NextPage = () => {
         </Container>
 
         <Togglable></Togglable>
-        <Center style={{ width: '92%', margin: 'auto', marginTop: 11 }}>
+        <Center style={{ width: '93%', margin: 'auto', marginTop: 11 }}>
           <MediaQuery smallerThan="sm" styles={menuSmQuery}>
             <MediaQuery smallerThan="md" styles={menuMdQuery}>
               <Group grow style={{ width: '100%' }}>
-                <Group grow style={{ width: '100%', justifyContent: 'space-evenly', gap: 0 }}>
-                  <Button onClick={() => console.log('try focusing button with tab')} className={classes.ybutton}>O nás</Button>
-                  <Button className={classes.ybutton}>Ceník</Button>
-                  <Button className={classes.ybutton}>Služby</Button>
-                  <Button className={classes.ybutton}>Poptávka</Button>
-                  <Button className={classes.ybutton}>Galerie</Button>
-                </Group>
+                <Container style={{display: 'flex', width: '100%', justifyContent: 'space-between', gap: 8}}>
+                < Link className={classes.linkbtn} activeClass="active" to="about" spy={true} smooth={true}><Button className={classes.ybutton}>O nás</Button></Link>
+                < Link className={classes.linkbtn} to="pricing" spy={true} smooth={true}><Button className={classes.ybutton}>Ceník</Button></Link>
+                < Link className={classes.linkbtn} to="services" spy={true} smooth={true}><Button className={classes.ybutton}>Služby</Button></Link>
+                < Link className={classes.linkbtn} to="contact" spy={true} smooth={true}><Button className={classes.ybutton}>Poptávka</Button></Link>
+                < Link className={classes.linkbtn} to="gallery" spy={true} smooth={true}><Button className={classes.ybutton}>Galerie</Button></Link>
+                </Container>
               </Group></MediaQuery></MediaQuery>
           <MediaQuery smallerThan="xs" styles={menu2XsQuery}>
             <MediaQuery largerThan="sm" styles={menu2SmQuery}>
-              <Container style={{ transform: 'scale(1.)' }}><Container>
-                <Button className={classes.ybutton2}>O nás</Button>
-                <Button className={classes.ybutton2}>Ceník</Button></Container>
-                <Container>
-                  <Button className={classes.ybutton3}>Služby</Button>
-                  <Button className={classes.ybutton3}>Poptávka</Button>
-                  <Button className={classes.ybutton3}>Galerie</Button></Container></Container>
+              <Container style={{width: '100%'}}>
+              < Link className={classes.linkbtn} activeClass="active" to="about" spy={true} smooth={true}><Button className={classes.ybutton2}>O nás</Button></Link>
+              < Link className={classes.linkbtn} to="pricing" spy={true} smooth={true}><Button className={classes.ybutton2}>Ceník</Button></Link>
+              < Link className={classes.linkbtn} to="services" spy={true} smooth={true}><Button className={classes.ybutton2}>Služby</Button></Link>
+              < Link className={classes.linkbtn} to="contact" spy={true} smooth={true}><Button className={classes.ybutton2}>Poptávka</Button></Link>
+              < Link className={classes.linkbtn} to="gallery" spy={true} smooth={true}><Button className={classes.ybutton2}>Galerie</Button></Link></Container>
             </MediaQuery></MediaQuery>
         </Center>
 
 
-        <ul style={{display: 'flex', listStyle: 'none', justifyContent: 'space-around'}}>
-          <li className={classes.newBtns}><Link activeClass="active" to="about" spy={true} smooth={true}>O nás</Link></li>
-          <li className={classes.newBtns}><Link to="pricing" spy={true} smooth={true}>Ceník</Link></li>
-          <li className={classes.newBtns}><Link to="services" spy={true} smooth={true}>Služby</Link></li>
-          <li className={classes.newBtns}><Link to="contact" spy={true} smooth={true}>Poptávka</Link></li>
-          <li className={classes.newBtns}><Link to="gallery" spy={true} smooth={true}>Galerie</Link></li>
-            </ul>
-
+      
 
         <Container style={{ width: '86%', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', borderBottom: '3px solid #fede00' }}>
           <Title id="about" style={{ fontFamily: 'WhichWay', fontSize: '2.26vw', color: '#fede00', margin: '3%', marginTop: '5%', }}>O nás</Title>

@@ -79,10 +79,9 @@ interface ContactIconsListProps {
 }
 
 const MOCKDATA = [
-  { title: 'Email', description: 'hello@mantine.dev', icon: At },
-  { title: 'Phone', description: '+49 (800) 335 35 35', icon: Phone },
-  { title: 'Address', description: '844 Morris Park avenue', icon: MapPin },
-  { title: 'Working hours', description: '8 a.m. – 11 p.m.', icon: Sun },
+  { title: 'E-mail', description: 'info@2ww.cz', icon: At },
+  { title: 'Telefon', description: '+420 777 032 783 / +420 032 784', icon: Phone },
+  { title: 'Jsme tu pro vás', description: 'Po - So: 8:00 - 20:00', icon: Sun },
 ];
 
 export function ContactIconsList({ data = MOCKDATA, variant }: ContactIconsListProps) {

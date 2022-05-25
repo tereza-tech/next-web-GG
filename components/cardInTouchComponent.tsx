@@ -166,7 +166,7 @@ export function CardInTouch() {
           <div className={classes.fields}>
             <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
               <TextInput label="Your name" placeholder="Your name" />
-              <TextInput label="Your phone num." placeholder="+420 ...." required />
+              <TextInput label="Your phone num." placeholder="+420" required />
             </SimpleGrid>
 
             <TextInput mt="md" label="Time to call" placeholder="11:30-11:45" required />

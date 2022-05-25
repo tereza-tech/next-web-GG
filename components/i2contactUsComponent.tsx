@@ -2,13 +2,13 @@ import React from 'react';
 import {
   createStyles,
   Text,
-  Title,
   SimpleGrid,
   TextInput,
   Textarea,
   Button,
   Group,
   ActionIcon,
+  Title
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { BrandTwitter, BrandYoutube, BrandInstagram } from 'tabler-icons-react';
@@ -96,7 +96,8 @@ const useStyles = createStyles((theme) => ({
   },
 
   control: {
-    backgroundColor: theme.colors[theme.primaryColor][6],
+    backgroundColor: '#fede00',
+    color: 'black'
   },
 }));
 
@@ -131,41 +132,43 @@ export function ContactUs() {
     <div className={classes.wrapper}>
       <SimpleGrid cols={2} spacing={50} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
         <div>
-          <Title className={classes.title}>Contact us</Title>
+          <Title className={classes.title}>Poptávka</Title>
           <Text className={classes.description} mt="sm" mb={30}>
-            Leave your email and we will get back to you within 24 hours
+            Pošlete nám nezávaznou poptávku, my Vás do 24 hodin kontaktujeme nazpět.
           </Text>
 
           <ContactIconsList variant="white" />
 
           <Group mt="xl">{icons}</Group>
+          <br /><br />
+          <br /><br />          <Title style={{color: '#fede00'}} order={4}>Which Way? This Way!</Title>
         </div>
         <form>
        {/* <form className={classes.form} onSubmit={form.onSubmit((values) => console.log(values))}>*/}
-          <Text size="lg" weight={700} className={classes.title}>
-            Leave the info
-          </Text>
+        
 
           <div className={classes.fields}>
             <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-              <TextInput label="Your name" placeholder="Your name" />
-              <TextInput label="Your phone num." placeholder="+420 ...." required />
+              <TextInput label="Celé jméno" placeholder="Jmeéno Příjmenní" />
+              <TextInput label="Telefonní číslo" placeholder="+420 " required />
             </SimpleGrid>
-
-            <TextInput mt="md" label="Time to call" placeholder="11:30-11:45" required />
+            <TextInput mt="md" label="E-mail" placeholder="" required />
+            <TextInput mt="md" label="Máte preferovaný čas, kdy Vás kontaktovat?" placeholder="" />
 <Textarea
               mt="md"
-              label="Your message"
-              placeholder="Please include all relevant information"
+              label="Prosíme specifikujte zde vaše požadavky:"
+              placeholder=""
               minRows={3}
+              required
             />
             <Group position="right" mt="md">
               <Button type="submit" className={classes.control}>
-                Send message
+                Odeslat
               </Button>
             </Group>
           </div>
         </form>
+       
       </SimpleGrid>
     </div>
   );
