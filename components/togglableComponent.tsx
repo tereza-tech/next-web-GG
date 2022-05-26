@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dialog, Group, Button, TextInput, Text } from '@mantine/core';
+import { Dialog, Group, Button, TextInput, Text, CSSObject, MediaQuery, Container } from '@mantine/core';
 import {
   Paper,
   Textarea,
@@ -7,7 +7,7 @@ import {
   SimpleGrid,
   createStyles,
 } from '@mantine/core';
-import { ContactIconsList } from './ContactIcons/ContactIcons';
+import { ContactIconsList } from './ContactIcons';
 import { Phone } from 'tabler-icons-react';
 
 const useStyles = createStyles((theme) => {
@@ -27,14 +27,17 @@ const useStyles = createStyles((theme) => {
       },
     },
     button: {
-      backgroundColor: 'yellow',
+      backgroundColor: '#fede00',
       height: 48,
+      position: 'relative',
+      bottom: 280,
       color: 'black', 
-      borderRadius: '14px 0 0 14px'
+      borderRadius: '14px 0 0 14px',
+      fontWeight: 600,
     },
     contacts: {
       boxSizing: 'border-box',
-      top: 'calc(50% - 170px)',
+      top: 'calc(10%)',
       borderRadius: theme.radius.lg - 2,
       border: '1px solid transparent',
       padding: theme.spacing.xl,
@@ -48,7 +51,7 @@ const useStyles = createStyles((theme) => {
 
     title: {
       marginBottom: theme.spacing.xl * 1.5,
-      fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+      fontFamily: `WhichWay`,
 
       [BREAKPOINT]: {
         marginBottom: theme.spacing.xl,
@@ -64,12 +67,12 @@ const useStyles = createStyles((theme) => {
     dialog: {
     },
     toggler: {
+
       padding: 0,
       width: 130,
       paddingRight: 0,
       border: 'none',
       backgroundColor: '#00000000',
-      bottom: '246px',
     },
   };
 });
@@ -79,13 +82,29 @@ export function Togglable() {
   const { classes } = useStyles();
   const [opened, setOpened] = useState(false);
 
+  const toggl: CSSObject = {
+    display: 'none'
+  }
+
+  const cont: CSSObject = {
+      position: 'absolute',
+      top: 0,
+      right: 0
+  }
+  const smbtn : CSSObject = {
+      position: 'relative',
+      right: -84
+  }
+
+
   return (
-    <>
+    <MediaQuery smallerThan="md" styles={toggl}>
+        <Container styles={cont}>
       <Dialog
         opened={!opened}
         className={classes.toggler}
       >
-        <Button
+        <MediaQuery smallerThan="md" styles={smbtn}><Button
         leftIcon={<Phone size={20} />}
         radius="xl"
         size="md"
@@ -96,7 +115,7 @@ export function Togglable() {
         onClick={() => setOpened((o) => !o)}
       >
        Kontakt
-      </Button>
+      </Button></MediaQuery>
       </Dialog>
       <Dialog
         opened={opened}
@@ -111,6 +130,7 @@ export function Togglable() {
 
         </Group>
       </Dialog>
-    </>
+      </Container>
+    </MediaQuery>
   );
 }
