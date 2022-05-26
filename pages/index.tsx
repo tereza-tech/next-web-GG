@@ -171,7 +171,7 @@ const Home: NextPage = () => {
                   <Group style={{ fontFamily: 'WhichWay', color: '#fede00' }}>
                     <Image src={Phone.src} className={classes.icony1}></Image>
                     <Stack spacing="xs">
-                      <Title order={5} style={{ color: '#fede00' }}>+420 777 032 783</Title>
+                      <Title order={5} style={{ color: '#fede00' }}>+420 777 032 765</Title>
                       <Title order={5} style={{ color: '#fede00' }}>+420 777 032 763</Title>
                     </Stack>
                   </Group>
@@ -196,7 +196,7 @@ const Home: NextPage = () => {
               <Group style={{ fontFamily: 'WhichWay', color: '#fede00' }}>
                 <Image src={Phone.src} className={classes.icony1} style={{ width: '6.5vw' }}></Image>
                 <Stack spacing="xs">
-                  <Title order={5} style={{ color: '#fede00', fontSize: '2.34vw' }}>+420 777 032 783</Title>
+                  <Title order={5} style={{ color: '#fede00', fontSize: '2.34vw' }}>+420 777 032 765</Title>
                   <Title order={5} style={{ color: '#fede00', fontSize: '2.35vw' }}>+420 777 032 763</Title>
                 </Stack>
               </Group>
