@@ -280,11 +280,11 @@ const Home: NextPage = () => {
           <MediaQuery smallerThan="xs" styles={menu2XsQuery}>
             <MediaQuery largerThan="sm" styles={menu2SmQuery}>
               <Container style={{width: '100%'}}>
-              < Link className={classes.linkbtn} activeClass="active" to="about" spy={true} smooth={true}><Button className={classes.ybutton2}>O nás</Button></Link>
-              < Link className={classes.linkbtn} to="pricing" spy={true} smooth={true}><Button className={classes.ybutton2}>Ceník</Button></Link>
-              < Link className={classes.linkbtn} to="services" spy={true} smooth={true}><Button className={classes.ybutton2}>Služby</Button></Link>
-              < Link className={classes.linkbtn} to="contact" spy={true} smooth={true}><Button className={classes.ybutton2}>Poptávka</Button></Link>
-              < Link className={classes.linkbtn} to="gallery" spy={true} smooth={true}><Button className={classes.ybutton2}>Galerie</Button></Link></Container>
+              < Link className={classes.linkbtn} activeClass="active" to="about" spy={true} smooth={true}><Button className={classes.ybutton2}>O NÁS</Button></Link>
+              < Link className={classes.linkbtn} to="pricing" spy={true} smooth={true}><Button className={classes.ybutton2}>CENÍK</Button></Link>
+              < Link className={classes.linkbtn} to="services" spy={true} smooth={true}><Button className={classes.ybutton2}>SLUŽBY</Button></Link>
+              < Link className={classes.linkbtn} to="contact" spy={true} smooth={true}><Button className={classes.ybutton2}>POPTÁVKA</Button></Link>
+              < Link className={classes.linkbtn} to="gallery" spy={true} smooth={true}><Button className={classes.ybutton2}>GALERIE</Button></Link></Container>
             </MediaQuery></MediaQuery>
         </Center>
 
