@@ -92,8 +92,11 @@ export function Togglable() {
       right: 0
   }
   const smbtn : CSSObject = {
-      position: 'relative',
-      right: -84
+      position: 'absolute',
+      width: 0,
+      height: 0,
+      display: 'none'
+
   }
 
 
