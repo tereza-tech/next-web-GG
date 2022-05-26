@@ -302,7 +302,7 @@ const Home: NextPage = () => {
               <Image src="./van.png" alt="" style={{ width: '23%', margin: 'auto', paddingTop: '12%', paddingBottom: '0%', marginLeft: '3%' }}></Image>
             </MediaQuery>
             <MediaQuery smallerThan="md" styles={guysQuery}>
-            <Image src="./dig_9.PNG" alt="" style={{ width: '64%', minWidth: '245px', margin: 'auto', paddingTop: '7%', paddingBottom: '2%', marginLeft: '15%' }}></Image></MediaQuery>
+            <Image src="./dig_9.PNG" alt="" style={{ width: '64%', minWidth: '245px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '16%', marginRight: '6%' }}></Image></MediaQuery>
           </Center>
           <MediaQuery largerThan="md" styles={underguysQuery}>
           <Image src="./dig_10.PNG" alt="" style={{ width: '60%', minWidth: '275px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginBottom: '0%' }}></Image></MediaQuery>
