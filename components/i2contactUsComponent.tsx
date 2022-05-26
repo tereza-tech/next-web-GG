@@ -56,9 +56,10 @@ const useStyles = createStyles((theme) => ({
     color: '#fede00',
     lineHeight: 1,
     fontSize: '2.26vw',
-    margin: '5% 0',
+    margin: '5% 0 16% 0',
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-      fontSize: '3.8vw'
+      fontSize: '3.52vw',
+      marginBottom: '8%'
     },
   },
 
@@ -167,8 +168,8 @@ const lgWWQuery: CSSObject = {
           <ContactIconsList variant="white" />
           <Group mt="xl">{icons}</Group>
           <Container>
-          <br /><br />
-          <br /><br />          <Title style={{color: '#fede00'}} order={4}>Which Way? This Way!</Title></Container></Container></MediaQuery>
+          <br />
+          <br />          <Title style={{color: '#fede00'}} order={4}>Which Way? This Way!</Title></Container></Container></MediaQuery>
         </div>
         <form>
        {/* <form className={classes.form} onSubmit={form.onSubmit((values) => console.log(values))}>*/}

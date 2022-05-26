@@ -292,11 +292,11 @@ const Home: NextPage = () => {
       
 
         <Container style={{ width: '86%', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', borderBottom: '3px solid #fede00' }}>
-        <MediaQuery smallerThan="sm" styles={headerIQuery}><Title id="about" style={{ fontFamily: 'WhichWay', fontSize: '2.26vw', color: '#fede00', margin: '3%', marginTop: '5%', }}>O nás</Title></MediaQuery>
-          <MediaQuery smallerThan="sm" styles={centerIQuery}><Image src="./dig_11.PNG" alt="" style={{ width: '79%', minWidth: '338px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '5%' }}></Image>
+        <MediaQuery smallerThan="sm" styles={headerIQuery}><Title id="about" style={{ fontFamily: 'WhichWay', fontSize: '2.16vw', color: '#fede00', margin: '3%', marginTop: '5%', }}>O nás</Title></MediaQuery>
+          <MediaQuery smallerThan="sm" styles={centerIQuery}><Image src="./dig_11.PNG" alt="" style={{ width: '78%', minWidth: '338px', margin: '7% 0 1% 10%', }}></Image>
           </MediaQuery></Container>
         <Container style={{ width: '82%', margin: 'auto', paddingBottom: '1%', marginBottom: '1%', marginTop: '29px', borderBottom: '4px solid #fede00' }}>
-        <MediaQuery smallerThan="sm" styles={headerIQuery}><Title id="pricing" style={{ fontFamily: 'WhichWay', fontSize: '2.26vw', color: '#fede00', margin: '0.2%', marginTop: '8%', }}>Ceník</Title></MediaQuery>
+        <MediaQuery smallerThan="sm" styles={headerIQuery}><Title id="pricing" style={{ fontFamily: 'WhichWay', fontSize: '2.16vw', color: '#fede00', margin: '0.2%', marginTop: '8%', }}>Ceník</Title></MediaQuery>
           <Center style={{ display: 'flex', alignItems: 'stretch', paddingBottom: '2%' }}>
             <MediaQuery smallerThan="sm" styles={vanQuery}>
               <Image src="./van.png" alt="" style={{ width: '23%', margin: 'auto', paddingTop: '12%', paddingBottom: '0%', marginLeft: '3%' }}></Image>
