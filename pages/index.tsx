@@ -91,7 +91,7 @@ const Home: NextPage = () => {
 
   const centerQuery: CSSObject = {
     position: 'relative',
-    left: -30,
+    left: -36,
   };
 
   const logoMdQuery: CSSObject = {
@@ -108,8 +108,8 @@ const Home: NextPage = () => {
 
   const centerIQuery: CSSObject = {
     position: 'relative',
-    left: -13,
-    transform: 'scaleY(1.05)'
+    left: -22,
+    transform: 'scaleY(1.01)'
   };
 
   const column: CSSObject = {
