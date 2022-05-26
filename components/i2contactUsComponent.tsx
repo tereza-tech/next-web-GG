@@ -12,7 +12,7 @@ import {
   CSSObject, MediaQuery, Container
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { BrandTwitter, BrandYoutube, BrandInstagram } from 'tabler-icons-react';
+import { BrandTwitter, BrandYoutube, BrandInstagram, BrandFacebook } from 'tabler-icons-react';
 import { ContactIconsList } from './ContactIcons';
 import { mockSubmit, FormData } from '../api/airtable';
 
@@ -102,7 +102,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const social = [BrandTwitter, BrandYoutube, BrandInstagram];
+const social = [BrandInstagram, BrandFacebook];
 
 export function ContactUs() {
   const { classes } = useStyles();

@@ -78,7 +78,9 @@ const Home: NextPage = () => {
   };
 
   const leadContactQuery: CSSObject = {
-    transform: 'scale(0.7)'
+    transform: 'scale(0.7)',
+    gap:'2px!important',
+    width: '100%'
   };
 
   const hideContactQuery: CSSObject = {
@@ -103,7 +105,7 @@ const Home: NextPage = () => {
   };
 
   const logoXsQuery: CSSObject = {
-    transform: 'scale(0.6)'
+    transform: 'scale(0.5)'
   };
 
   const centerIQuery: CSSObject = {
@@ -117,12 +119,41 @@ const Home: NextPage = () => {
     flexDirection: 'column'
   }
 
+  const lgHeaderQuery: CSSObject = {
+    width: '95%',
+    position: 'relative',
+    left: -10,
+    padding: 0,
+    height: 150
+  }
+
   const smPaddingQuery: CSSObject = {
     padding: '0 20px'
   }
 
   const smHeaderQuery: CSSObject = {
-    width: '60%'
+    width: '105%',
+    position: 'relative',
+    left: -20,
+    padding: 0,
+    height: 100,
+    transform: 'scale(0.9)'
+  }
+
+  const mdHeaderQuery: CSSObject = {
+    width: '90.5%',
+    height: 120,
+    display: 'block',
+    paddingTop: '1%',
+    paddingBottom: '2%'
+  }
+
+  const xsHeaderQuery: CSSObject = {
+    width: '110%',
+    position: 'relative',
+    left: -34,
+    padding: 0,
+    height: 80
   }
 
   const menuMdQuery: CSSObject = {
@@ -141,6 +172,12 @@ const Home: NextPage = () => {
   }
 
 
+  const headerIQuery: CSSObject = {
+    fontSize: '15px!important',
+    marginLeft: 0,
+  }
+
+
   const boxStyles = {
     borderRadius: 3,
     padding: '3px 5px',
@@ -156,8 +193,11 @@ const Home: NextPage = () => {
       </Head>
       <main>
       <Togglable></Togglable>
-        <MediaQuery smallerThan="md" styles={smHeaderQuery}>
-          <Center style={{ width: '90.5%',  display: 'flex', justifyContent: 'space-between', margin: 'auto', paddingTop: '1%', paddingBottom: '2%', height: 130 }}>
+      <MediaQuery largerThan="md" styles={lgHeaderQuery}>
+        <MediaQuery smallerThan="xs" styles={xsHeaderQuery}>
+        <MediaQuery smallerThan="sm" styles={smHeaderQuery}>
+        <MediaQuery smallerThan="md" styles={mdHeaderQuery}>
+          <Center style={{ display: 'flex', justifyContent: 'space-between', margin: 'auto' }}>
             <MediaQuery smallerThan="xs" styles={logoXsQuery}>
               <MediaQuery smallerThan="sm" styles={logoSmQuery}>
                 <MediaQuery smallerThan="md" styles={logoMdQuery}>
@@ -168,9 +208,9 @@ const Home: NextPage = () => {
             <MediaQuery smallerThan="sm" styles={hideContactQuery}>
               <MediaQuery smallerThan="md" styles={leadContactQuery}>
                 <Group>
-                  <Group style={{ fontFamily: 'WhichWay', color: '#fede00' }}>
+                  <Group style={{ fontFamily: 'WhichWay', color: 'blue'}}>
                     <Image src={Phone.src} className={classes.icony1}></Image>
-                    <Stack spacing="xs">
+                    <Stack spacing={"xs"}>
                       <Title order={5} style={{ color: '#fede00' }}>+420 777 032 765</Title>
                       <Title order={5} style={{ color: '#fede00' }}>+420 777 032 763</Title>
                     </Stack>
@@ -188,14 +228,16 @@ const Home: NextPage = () => {
                 <MediaQuery smallerThan="md" styles={logoMdQuery}><Image src="./Giraffe_logo.png" alt="logo" style={{ width: 108 }}></Image></MediaQuery></MediaQuery></MediaQuery>
           </Center>
         </MediaQuery>
-        
+        </MediaQuery>
+        </MediaQuery>
+        </MediaQuery>
 
         <MediaQuery largerThan="sm" styles={underContactQuery}>
           <Center style={{ paddingBottom: 10 }}>
             <Group>
               <Group style={{ fontFamily: 'WhichWay', color: '#fede00' }}>
                 <Image src={Phone.src} className={classes.icony1} style={{ width: '6.5vw' }}></Image>
-                <Stack spacing="xs">
+                <Stack spacing={0}>
                   <Title order={5} style={{ color: '#fede00', fontSize: '2.34vw' }}>+420 777 032 765</Title>
                   <Title order={5} style={{ color: '#fede00', fontSize: '2.35vw' }}>+420 777 032 763</Title>
                 </Stack>
@@ -240,11 +282,11 @@ const Home: NextPage = () => {
       
 
         <Container style={{ width: '86%', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', borderBottom: '3px solid #fede00' }}>
-          <Title id="about" style={{ fontFamily: 'WhichWay', fontSize: '2.26vw', color: '#fede00', margin: '3%', marginTop: '5%', }}>O nás</Title>
-          <MediaQuery smallerThan="sm" styles={centerIQuery}><Image src="./dig_11.PNG" alt="" style={{ width: '79%', minWidth: '388px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '5%' }}></Image>
+        <MediaQuery smallerThan="sm" styles={headerIQuery}><Title id="about" style={{ fontFamily: 'WhichWay', fontSize: '2.26vw', color: '#fede00', margin: '3%', marginTop: '5%', }}>O nás</Title></MediaQuery>
+          <MediaQuery smallerThan="sm" styles={centerIQuery}><Image src="./dig_11.PNG" alt="" style={{ width: '79%', minWidth: '338px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '5%' }}></Image>
           </MediaQuery></Container>
         <Container style={{ width: '82%', margin: 'auto', paddingBottom: '1%', marginBottom: '1%', marginTop: '29px', borderBottom: '4px solid #fede00' }}>
-          <Title id="pricing" style={{ fontFamily: 'WhichWay', fontSize: '2.26vw', color: '#fede00', margin: '0.2%', marginTop: '8%', }}>Ceník</Title>
+        <MediaQuery smallerThan="sm" styles={headerIQuery}><Title id="pricing" style={{ fontFamily: 'WhichWay', fontSize: '2.26vw', color: '#fede00', margin: '0.2%', marginTop: '8%', }}>Ceník</Title></MediaQuery>
           <Container style={{ display: 'flex', alignItems: 'stretch', paddingBottom: '2%' }}>
             <MediaQuery smallerThan="sm" styles={vanQuery}>
               <Image src="./van.png" alt="" style={{ width: '23%', margin: 'auto', paddingTop: '12%', paddingBottom: '0%', marginLeft: '3%' }}></Image>
@@ -255,12 +297,12 @@ const Home: NextPage = () => {
         </Container>
         <Container style={{ width: '84%', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginTop: '3%', borderBottom: '3px solid #fede00' }}>
           <MediaQuery smallerThan="sm" styles={centerQuery}><span>
-            <Image src="./dig_8.PNG" alt="" style={{ width: '80%', minWidth: '390px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '8%', marginBottom: '3%' }}></Image>
-            <Image src="./dig_7.PNG" alt="" style={{ width: '80%', minWidth: '390px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '8%', marginBottom: '3%' }}></Image>
+            <Image src="./dig_8.PNG" alt="" style={{ width: '80%', minWidth: '340px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '8%', marginBottom: '3%' }}></Image>
+            <Image src="./dig_7.PNG" alt="" style={{ width: '80%', minWidth: '340px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '8%', marginBottom: '3%' }}></Image>
           </span></MediaQuery></Container>
 
         <Container id="services" style={{ width: '81%', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', borderBottom: '3px solid #fede00', marginBottom: '1%' }}>
-          <Title style={{ fontFamily: 'WhichWay', fontSize: '2.1vw', color: '#fede00', margin: '1%', marginTop: '5%', }}>Služby</Title>
+        <MediaQuery smallerThan="sm" styles={headerIQuery}><Title style={{ fontFamily: 'WhichWay', fontSize: '2.1vw', color: '#fede00', margin: '1%', marginTop: '5%', }}>Služby</Title></MediaQuery>
           <Center><Image src="./dig_5.PNG" alt="" style={{ width: '56%', minWidth: '280px', margin: '5%' }}></Image></Center>
         </Container>
         <Container id="contact" style={{ width: '86%' }}><ContactUs></ContactUs></Container>
