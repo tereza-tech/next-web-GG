@@ -120,11 +120,12 @@ const Home: NextPage = () => {
   }
 
   const lgHeaderQuery: CSSObject = {
-    width: '95%',
+    width: '94%',
     position: 'relative',
-    left: -10,
+    paddingTop: 0,
     padding: 0,
-    height: 150
+    height: 150,
+    transform: 'scale(0.95)'
   }
 
   const smPaddingQuery: CSSObject = {
@@ -149,9 +150,9 @@ const Home: NextPage = () => {
   }
 
   const xsHeaderQuery: CSSObject = {
-    width: '110%',
+    width: '115%',
     position: 'relative',
-    left: -34,
+    left: '-11%',
     padding: 0,
     height: 80
   }
@@ -174,7 +175,16 @@ const Home: NextPage = () => {
 
   const headerIQuery: CSSObject = {
     fontSize: '15px!important',
-    marginLeft: 0,
+    marginLeft: '-15px!important',
+  }
+
+  const guysQuery: CSSObject = {
+    paddingRight: '10%',
+    position: 'relative',
+    right: '3%'
+  }
+  const underguysQuery: CSSObject = {
+    marginBottom: '3%'
   }
 
 
@@ -236,22 +246,22 @@ const Home: NextPage = () => {
           <Center style={{ paddingBottom: 10 }}>
             <Group>
               <Group style={{ fontFamily: 'WhichWay', color: '#fede00' }}>
-                <Image src={Phone.src} className={classes.icony1} style={{ width: '6.5vw' }}></Image>
+                <Image src={Phone.src} className={classes.icony1} style={{ width: '6.2vw' }}></Image>
                 <Stack spacing={0}>
-                  <Title order={5} style={{ color: '#fede00', fontSize: '2.34vw' }}>+420 777 032 765</Title>
-                  <Title order={5} style={{ color: '#fede00', fontSize: '2.35vw' }}>+420 777 032 763</Title>
+                  <Title order={5} style={{ color: '#fede00', fontSize: '2.25vw' }}>+420 777 032 765</Title>
+                  <Title order={5} style={{ color: '#fede00', fontSize: '2.25vw' }}>+420 777 032 763</Title>
                 </Stack>
               </Group>
               <Space w="xs" />
               <Group>
-                <Image src={Mail.src} className={classes.icony2} style={{ width: '5.5vw' }}></Image>
-                <Title order={5} style={{ color: '#fede00', fontSize: '2.27vw', paddingBottom: 6 }}>info@2ww.cz</Title>
+                <Image src={Mail.src} className={classes.icony2} style={{ width: '5.2vw' }}></Image>
+                <Title order={5} style={{ color: '#fede00', fontSize: '2.17vw', paddingBottom: 6 }}>info@2ww.cz</Title>
               </Group>
             </Group>
           </Center>
         </MediaQuery>
-        <Container style={{ width: '85%', margin: 'auto' }}>
-          <Image src="./intro.jpeg" alt="Intro Image" style={{ width: '110%', position: 'relative', left: '-5%' }}></Image>
+        <Container style={{ width: '85%', margin: 'auto', backgroundColor: '#101010' }}>
+          <Image src="./intro.jpg" alt="Intro Image" style={{ width: '110%', position: 'relative', left: '-5%' }}></Image>
         </Container>
 
         
@@ -287,23 +297,25 @@ const Home: NextPage = () => {
           </MediaQuery></Container>
         <Container style={{ width: '82%', margin: 'auto', paddingBottom: '1%', marginBottom: '1%', marginTop: '29px', borderBottom: '4px solid #fede00' }}>
         <MediaQuery smallerThan="sm" styles={headerIQuery}><Title id="pricing" style={{ fontFamily: 'WhichWay', fontSize: '2.26vw', color: '#fede00', margin: '0.2%', marginTop: '8%', }}>Ceník</Title></MediaQuery>
-          <Container style={{ display: 'flex', alignItems: 'stretch', paddingBottom: '2%' }}>
+          <Center style={{ display: 'flex', alignItems: 'stretch', paddingBottom: '2%' }}>
             <MediaQuery smallerThan="sm" styles={vanQuery}>
               <Image src="./van.png" alt="" style={{ width: '23%', margin: 'auto', paddingTop: '12%', paddingBottom: '0%', marginLeft: '3%' }}></Image>
             </MediaQuery>
-            <Image src="./dig_9.PNG" alt="" style={{ width: '64%', minWidth: '245px', margin: 'auto', paddingTop: '7%', paddingBottom: '2%', marginLeft: '15%' }}></Image>
-          </Container>
-          <Image src="./dig_10.PNG" alt="" style={{ width: '60%', minWidth: '310px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginBottom: '3%' }}></Image>
+            <MediaQuery smallerThan="md" styles={guysQuery}>
+            <Image src="./dig_9.PNG" alt="" style={{ width: '64%', minWidth: '245px', margin: 'auto', paddingTop: '7%', paddingBottom: '2%', marginLeft: '15%' }}></Image></MediaQuery>
+          </Center>
+          <MediaQuery largerThan="md" styles={underguysQuery}>
+          <Image src="./dig_10.PNG" alt="" style={{ width: '60%', minWidth: '275px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginBottom: '0%' }}></Image></MediaQuery>
         </Container>
         <Container style={{ width: '84%', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginTop: '3%', borderBottom: '3px solid #fede00' }}>
           <MediaQuery smallerThan="sm" styles={centerQuery}><span>
-            <Image src="./dig_8.PNG" alt="" style={{ width: '80%', minWidth: '340px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '8%', marginBottom: '3%' }}></Image>
+            <Image src="./dig_12.png" alt="" style={{ width: '80%', minWidth: '340px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '8%', marginBottom: '3%' }}></Image>
             <Image src="./dig_7.PNG" alt="" style={{ width: '80%', minWidth: '340px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '8%', marginBottom: '3%' }}></Image>
           </span></MediaQuery></Container>
 
         <Container id="services" style={{ width: '81%', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', borderBottom: '3px solid #fede00', marginBottom: '1%' }}>
         <MediaQuery smallerThan="sm" styles={headerIQuery}><Title style={{ fontFamily: 'WhichWay', fontSize: '2.1vw', color: '#fede00', margin: '1%', marginTop: '5%', }}>Služby</Title></MediaQuery>
-          <Center><Image src="./dig_5.PNG" alt="" style={{ width: '56%', minWidth: '280px', margin: '5%' }}></Image></Center>
+          <Center><Image src="./dig_5.PNG" alt="" style={{ width: '56%', minWidth: '250px', margin: '5%' }}></Image></Center>
         </Container>
         <Container id="contact" style={{ width: '86%' }}><ContactUs></ContactUs></Container>
 

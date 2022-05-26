@@ -9,7 +9,7 @@ import {
   Group,
   ActionIcon,
   Title,
-  CSSObject, MediaQuery, Container
+  CSSObject, MediaQuery, Container, Center
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { BrandTwitter, BrandYoutube, BrandInstagram, BrandFacebook } from 'tabler-icons-react';
@@ -35,6 +35,7 @@ const useStyles = createStyles((theme) => ({
   },
   wrapper: {
     width: '100%',
+    marginTop: '3%',
     backgroundColor: '#141517',
     borderRadius: '16px',
     minHeight: 400,
@@ -42,25 +43,33 @@ const useStyles = createStyles((theme) => ({
     backgroundImage: `linear-gradient(-60deg, ${theme.colors[theme.primaryColor][4]} 0%, ${
       theme.colors[theme.primaryColor][7]
     } 100%)`,
-    padding: theme.spacing.xl * 2.5,
+    padding: '35px 15px',
 
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-      padding: theme.spacing.xl * 1.5,
+      padding: 0,
+      backgroundColor: '#101010',
     },
   },
 
   title: {
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    color: theme.white,
+    fontFamily: 'WhichWay',
+    color: '#fede00',
     lineHeight: 1,
+    fontSize: '2.26vw',
+    margin: '5% 0',
+    [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+      fontSize: '3.8vw'
+    },
   },
 
   description: {
     color: theme.colors[theme.primaryColor][0],
     maxWidth: 400,
+    marginBottom: 30,
 
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
       maxWidth: '100%',
+      marginBottom: 0
     },
   },
 
@@ -81,6 +90,9 @@ const useStyles = createStyles((theme) => ({
 
   fields: {
     marginTop: 28,
+    [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+      marginTop: 0
+    },
   },
 
   input: {
@@ -108,11 +120,13 @@ export function ContactUs() {
   const { classes } = useStyles();
 
 const smWWQuery: CSSObject = {
-  display: 'none'
+  display: 'none',
+  height: 0
 }
 
 const lgWWQuery: CSSObject = {
-  display: 'none'
+  display: 'none',
+  height: 0
 }
 
   function Demo() {
@@ -138,21 +152,23 @@ const lgWWQuery: CSSObject = {
   ));
 
   return (
-    <div className={classes.wrapper}>
-      <SimpleGrid cols={2} spacing={50} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
+    <Center style={{width: '100%'}}>
+    <Center className={classes.wrapper}>
+      <Center>
+      <SimpleGrid style={{width: '95%'}} cols={2} spacing={50} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
         <div>
           <Title className={classes.title}>Poptávka</Title>
-          <Text className={classes.description} mt="sm" mb={30}>
+          <Text className={classes.description} mt="sm">
             Pošlete nám nezávaznou poptávku, my Vás do 24 hodin kontaktujeme nazpět.
           </Text>
-
-          <ContactIconsList variant="white" />
-
-          <Group mt="xl">{icons}</Group>
+          
           <MediaQuery smallerThan="md" styles={smWWQuery}>
+            <Container>
+          <ContactIconsList variant="white" />
+          <Group mt="xl">{icons}</Group>
           <Container>
           <br /><br />
-          <br /><br />          <Title style={{color: '#fede00'}} order={4}>Which Way? This Way!</Title></Container></MediaQuery>
+          <br /><br />          <Title style={{color: '#fede00'}} order={4}>Which Way? This Way!</Title></Container></Container></MediaQuery>
         </div>
         <form>
        {/* <form className={classes.form} onSubmit={form.onSubmit((values) => console.log(values))}>*/}
@@ -180,9 +196,13 @@ const lgWWQuery: CSSObject = {
           </div>
         </form>
         <MediaQuery largerThan="xs" styles={lgWWQuery}>
-          <Container><Title style={{color: '#fede00'}} order={4}>Which Way? This Way!</Title></Container></MediaQuery>
+          <Container style={{width: '140%', position: 'relative', right: '20%', top: '-36px', transform: 'scale(0.85)'}}><ContactIconsList variant="white" />
+          <Group mt="xl">{icons}</Group>
+          <Container><Title style={{color: '#fede00', position: 'relative', top: 32,}} order={4}>Which Way? This Way!</Title></Container></Container></MediaQuery>
        
       </SimpleGrid>
-    </div>
+      </Center>
+    </Center>
+    </Center>
   );
 }
