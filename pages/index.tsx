@@ -2,28 +2,10 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Image, Title, Group, ActionIcon, Button, MantineProvider , Text} from '@mantine/core'
-//import { HeaderSimple } from './headerComponent'
-import { HeaderSimpler } from '../components/i2headerComponent'
-import { HeroBullets2 } from '../components/heroBulletsComponent'
-import { HeroImageRight } from '../components/i2HeroRightComponent'
-import { HeroBullets } from '../components/i2HeroBulletsComonent'
-import { StatsGroup, UserInfoIcons } from '../components/i2statsGroupComponent'
-import { CardInTouch } from '../components/cardInTouchComponent'
-import { RowButtons } from '../components/rowButtons2'
-//import { CardInTouch } from '../components/cardInTouchComponent'
-import { TwoFlexContact } from '../components/twoFlexContactComponent'
-import { ThreeTiles } from '../components/threeTilesComponent'
-import { GridofThree } from '../components/gridComponent'
-import { FaqWithImage } from '../components/faqWithImageComponent'
-import { FeaturesAsymmetrical } from '../components/i2featBlocksComponent'
-import { Togglable } from '../components/togglableComponent'
-import { TopMenu, BannerLine } from '../components/topmenuComponent'
-import { LeadGrid } from '../components/i2ColsComponent'
 import Links from '../api/links.json'
 import Grid_data from '../api/grid.json'
 import stats from '../api/stats.json'
 import authors from '../api/authors.json'
-import { ContactUs } from '../components/i2contactUsComponent'
 
 const Home: NextPage = () => {
   return (
@@ -35,36 +17,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <HeaderSimpler links={Links.Links}></HeaderSimpler>
-      <HeroImageRight></HeroImageRight>
-        <Togglable></Togglable>
-        
-        <TopMenu></TopMenu>
-        <HeroBullets></HeroBullets>
-
-<Title style={{width:'59%', color: '#fede00', fontSize: 26}}>Ceník</Title>
-    <FeaturesAsymmetrical></FeaturesAsymmetrical>   
-    <Title style={{width:'59%', color: '#fede00', fontSize: 26}}>Služby</Title>
-    <HeroBullets2></HeroBullets2>
-    <Title style={{width:'59%', color: '#fede00', fontSize: 26}}>Poptávka</Title>
-    <CardInTouch></CardInTouch>
-        <StatsGroup data={stats.data}></StatsGroup>
-        
-        <FaqWithImage></FaqWithImage>
-      
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+     </main>
     </div>
   )
 }
