@@ -209,7 +209,7 @@ const Home: NextPage = () => {
           </Center>
         </MediaQuery>
         <Container style={{ width: '85%', margin: 'auto' }}>
-          <Image src="/intro.jpeg" alt="Intro Image" style={{ width: '110%', position: 'relative', left: '-5%' }}></Image>
+          <Image src="./intro.jpeg" alt="Intro Image" style={{ width: '110%', position: 'relative', left: '-5%' }}></Image>
         </Container>
 
         
@@ -241,27 +241,27 @@ const Home: NextPage = () => {
 
         <Container style={{ width: '86%', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', borderBottom: '3px solid #fede00' }}>
           <Title id="about" style={{ fontFamily: 'WhichWay', fontSize: '2.26vw', color: '#fede00', margin: '3%', marginTop: '5%', }}>O nás</Title>
-          <MediaQuery smallerThan="sm" styles={centerIQuery}><Image src="/dig_11.png" alt="" style={{ width: '79%', minWidth: '388px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '5%' }}></Image>
+          <MediaQuery smallerThan="sm" styles={centerIQuery}><Image src="./dig_11.png" alt="" style={{ width: '79%', minWidth: '388px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '5%' }}></Image>
           </MediaQuery></Container>
         <Container style={{ width: '82%', margin: 'auto', paddingBottom: '1%', marginBottom: '1%', marginTop: '29px', borderBottom: '4px solid #fede00' }}>
           <Title id="pricing" style={{ fontFamily: 'WhichWay', fontSize: '2.26vw', color: '#fede00', margin: '0.2%', marginTop: '8%', }}>Ceník</Title>
           <Container style={{ display: 'flex', alignItems: 'stretch', paddingBottom: '2%' }}>
             <MediaQuery smallerThan="sm" styles={vanQuery}>
-              <Image src="/van.png" alt="" style={{ width: '23%', margin: 'auto', paddingTop: '12%', paddingBottom: '0%', marginLeft: '3%' }}></Image>
+              <Image src="./van.png" alt="" style={{ width: '23%', margin: 'auto', paddingTop: '12%', paddingBottom: '0%', marginLeft: '3%' }}></Image>
             </MediaQuery>
-            <Image src="/dig_9.png" alt="" style={{ width: '64%', minWidth: '245px', margin: 'auto', paddingTop: '7%', paddingBottom: '2%', marginLeft: '15%' }}></Image>
+            <Image src="./dig_9.png" alt="" style={{ width: '64%', minWidth: '245px', margin: 'auto', paddingTop: '7%', paddingBottom: '2%', marginLeft: '15%' }}></Image>
           </Container>
           <Image src="./dig_10.png" alt="" style={{ width: '60%', minWidth: '310px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginBottom: '3%' }}></Image>
         </Container>
         <Container style={{ width: '84%', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginTop: '3%', borderBottom: '3px solid #fede00' }}>
           <MediaQuery smallerThan="sm" styles={centerQuery}><span>
-            <Image src="/dig_8.png" alt="" style={{ width: '80%', minWidth: '390px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '8%', marginBottom: '3%' }}></Image>
-            <Image src="/dig_7.png" alt="" style={{ width: '80%', minWidth: '390px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '8%', marginBottom: '3%' }}></Image>
+            <Image src="./dig_8.png" alt="" style={{ width: '80%', minWidth: '390px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '8%', marginBottom: '3%' }}></Image>
+            <Image src="./dig_7.png" alt="" style={{ width: '80%', minWidth: '390px', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', marginLeft: '8%', marginBottom: '3%' }}></Image>
           </span></MediaQuery></Container>
 
         <Container id="services" style={{ width: '81%', margin: 'auto', paddingTop: '2%', paddingBottom: '2%', borderBottom: '3px solid #fede00', marginBottom: '1%' }}>
           <Title style={{ fontFamily: 'WhichWay', fontSize: '2.1vw', color: '#fede00', margin: '1%', marginTop: '5%', }}>Služby</Title>
-          <Center><Image src="/dig_5.png" alt="" style={{ width: '56%', minWidth: '280px', margin: '5%' }}></Image></Center>
+          <Center><Image src="./dig_5.png" alt="" style={{ width: '56%', minWidth: '280px', margin: '5%' }}></Image></Center>
         </Container>
         <Container id="contact" style={{ width: '86%' }}><ContactUs></ContactUs></Container>
 
